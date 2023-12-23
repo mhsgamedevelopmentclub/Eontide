@@ -19,6 +19,10 @@ config/icon="res://assets/icon.svg"
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
 
+[dialogue_manager]
+
+general/balloon_path="res://dialogues/balloon.tscn"
+
 [editor_plugins]
 
 enabled=PackedStringArray("res://addons/dialogue_manager/plugin.cfg")

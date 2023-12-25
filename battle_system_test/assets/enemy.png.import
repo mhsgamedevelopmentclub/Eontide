@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv25ehmhuktid"
-path="res://.godot/imported/tile_0088.png-4d5e69f7804322df1d0221fed3ef529c.ctex"
+uid="uid://ddaak0khqbkou"
+path="res://.godot/imported/enemy.png-c21a7420ee03b9acb67141508f70879e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://battle_system_test/assets/tile_0088.png"
-dest_files=["res://.godot/imported/tile_0088.png-4d5e69f7804322df1d0221fed3ef529c.ctex"]
+source_file="res://battle_system_test/assets/enemy.png"
+dest_files=["res://.godot/imported/enemy.png-c21a7420ee03b9acb67141508f70879e.ctex"]
 
 [params]
 

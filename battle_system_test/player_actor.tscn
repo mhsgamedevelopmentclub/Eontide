@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjsu0h8ob28x"]
 
 [ext_resource type="Script" path="res://battle_system_test/player_actor.gd" id="1_02pmv"]
-[ext_resource type="Texture2D" uid="uid://dv25ehmhuktid" path="res://battle_system_test/assets/tile_0088.png" id="2_dhvsw"]
+[ext_resource type="Texture2D" uid="uid://dv25ehmhuktid" path="res://battle_system_test/assets/player.png" id="2_dhvsw"]
 
 [node name="PlayerActor" type="Node2D"]
 script = ExtResource("1_02pmv")
@@ -12,3 +12,7 @@ scale = Vector2(10, 10)
 texture = ExtResource("2_dhvsw")
 
 [node name="ATBTimer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true
+
+[connection signal="timeout" from="ATBTimer" to="." method="_on_atb_timer_timeout"]

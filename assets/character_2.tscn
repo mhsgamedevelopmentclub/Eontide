@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://djxpsjc8ovgeq"]
+[gd_scene load_steps=5 format=3 uid="uid://djxpsjc8ovgeq"]
 
 [ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="1_85as8"]
+[ext_resource type="PackedScene" uid="uid://r72mf8u551sp" path="res://dialogues/actionable.tscn" id="2_1ph16"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_rbysw"]
 radius = 99.4585
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sm1e1"]
+radius = 172.838
 
 [node name="Character_2" type="CharacterBody2D"]
 
@@ -12,3 +16,8 @@ texture = ExtResource("1_85as8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_rbysw")
+
+[node name="Actionable" parent="." instance=ExtResource("2_1ph16")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+shape = SubResource("CircleShape2D_sm1e1")

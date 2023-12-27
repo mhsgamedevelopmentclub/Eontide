@@ -1,11 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://5gf8m4e2i38r"]
+[gd_scene load_steps=3 format=3 uid="uid://5gf8m4e2i38r"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://assets/character_1.tscn" id="1_4p4e1"]
 [ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://assets/character_2.tscn" id="2_86s04"]
-[ext_resource type="PackedScene" uid="uid://r72mf8u551sp" path="res://dialogues/actionable.tscn" id="3_7gldx"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_s03xl"]
-radius = 172.285
 
 [node name="Dialogue_Interaction" type="Node2D"]
 
@@ -13,9 +9,4 @@ radius = 172.285
 position = Vector2(327, 206)
 
 [node name="Character_2" parent="." instance=ExtResource("2_86s04")]
-position = Vector2(775, 227)
-
-[node name="Actionable" parent="Character_2" instance=ExtResource("3_7gldx")]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Character_2/Actionable"]
-shape = SubResource("CircleShape2D_s03xl")
+position = Vector2(804, 280)

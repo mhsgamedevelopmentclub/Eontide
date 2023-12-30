@@ -1,19 +1,39 @@
-[gd_scene load_steps=5 format=3 uid="uid://cpa5856lc8yb7"]
+[gd_scene load_steps=10 format=3 uid="uid://cpa5856lc8yb7"]
 
 [ext_resource type="Script" path="res://assets/character_1.gd" id="1_h6wdc"]
-[ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="2_7jmf2"]
+[ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://OGPC MC Front Facing Pixel.png" id="2_hhyek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_r3prf"]
-radius = 94.255
+radius = 55.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ucj8"]
-radius = 130.863
+radius = 86.1452
+
+[sub_resource type="Animation" id="Animation_hvwgv"]
+resource_name = "Forward"
+
+[sub_resource type="Animation" id="Animation_cqb8v"]
+resource_name = "Backward"
+
+[sub_resource type="Animation" id="Animation_wm5u2"]
+resource_name = "Right"
+
+[sub_resource type="Animation" id="Animation_inbq3"]
+resource_name = "Left"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_4cl6q"]
+_data = {
+"Backward": SubResource("Animation_cqb8v"),
+"Forward": SubResource("Animation_hvwgv"),
+"Left": SubResource("Animation_inbq3"),
+"Right": SubResource("Animation_wm5u2")
+}
 
 [node name="Character_1" type="CharacterBody2D"]
 script = ExtResource("1_h6wdc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_7jmf2")
+texture = ExtResource("2_hhyek")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_r3prf")
@@ -26,3 +46,11 @@ collision_mask = 16
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/ActionableFinder"]
 shape = SubResource("CircleShape2D_4ucj8")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../AnimationTree")
+libraries = {
+"": SubResource("AnimationLibrary_4cl6q")
+}

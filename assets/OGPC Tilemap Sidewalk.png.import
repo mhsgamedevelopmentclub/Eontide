@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ctryjighaubn4"
-path="res://.godot/imported/OGPC MC Right Facing Pixel.png-1c56bf4ccf52f61e770fc98d5609797b.ctex"
+uid="uid://414bsgutxbe5"
+path="res://.godot/imported/OGPC Tilemap Sidewalk.png-de305d844aa4f043905936ae395558a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OGPC MC Right Facing Pixel.png"
-dest_files=["res://.godot/imported/OGPC MC Right Facing Pixel.png-1c56bf4ccf52f61e770fc98d5609797b.ctex"]
+source_file="res://assets/OGPC Tilemap Sidewalk.png"
+dest_files=["res://.godot/imported/OGPC Tilemap Sidewalk.png-de305d844aa4f043905936ae395558a9.ctex"]
 
 [params]
 

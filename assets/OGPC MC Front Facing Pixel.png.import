@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cx6w4c5b7edoy"
-path="res://.godot/imported/OGPC MC Front Facing Pixel.png-08134fbb76fccc0b288f82a7a2af9642.ctex"
+path="res://.godot/imported/OGPC MC Front Facing Pixel.png-3eb1b3e7d7e8b9b8403ae821bbb79d01.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OGPC MC Front Facing Pixel.png"
-dest_files=["res://.godot/imported/OGPC MC Front Facing Pixel.png-08134fbb76fccc0b288f82a7a2af9642.ctex"]
+source_file="res://assets/OGPC MC Front Facing Pixel.png"
+dest_files=["res://.godot/imported/OGPC MC Front Facing Pixel.png-3eb1b3e7d7e8b9b8403ae821bbb79d01.ctex"]
 
 [params]
 

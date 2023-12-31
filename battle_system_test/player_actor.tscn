@@ -1,15 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bjsu0h8ob28x"]
 
 [ext_resource type="Script" path="res://battle_system_test/player_actor.gd" id="1_02pmv"]
-[ext_resource type="Texture2D" uid="uid://dv25ehmhuktid" path="res://battle_system_test/assets/player.png" id="2_dhvsw"]
+[ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="2_i0mdl"]
 
 [node name="PlayerActor" type="Node2D"]
 script = ExtResource("1_02pmv")
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(10, 10)
-texture = ExtResource("2_dhvsw")
+scale = Vector2(3, 3)
+texture = ExtResource("2_i0mdl")
 
 [node name="ATBTimer" type="Timer" parent="."]
 wait_time = 20.0

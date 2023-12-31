@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dr81mymtvuvvw"
-path="res://.godot/imported/OGPC MC Back Facing Pixel.png-ea7ce517f168eaff80546435a74a1296.ctex"
+uid="uid://dhxf4pqv5tive"
+path="res://.godot/imported/OGPC MC Left Facing Pixel.png-8f55db744e8e3208a94956db4b011ee4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OGPC MC Back Facing Pixel.png"
-dest_files=["res://.godot/imported/OGPC MC Back Facing Pixel.png-ea7ce517f168eaff80546435a74a1296.ctex"]
+source_file="res://assets/OGPC MC Left Facing Pixel.png"
+dest_files=["res://.godot/imported/OGPC MC Left Facing Pixel.png-8f55db744e8e3208a94956db4b011ee4.ctex"]
 
 [params]
 

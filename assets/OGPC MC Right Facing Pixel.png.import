@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dv25ehmhuktid"
-path="res://.godot/imported/player.png-420056987a34bb60bb5e9255aa4767bb.ctex"
+uid="uid://ctryjighaubn4"
+path="res://.godot/imported/OGPC MC Right Facing Pixel.png-4d424590c204e2a6d442a20cd935a4aa.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://battle_system_test/assets/player.png"
-dest_files=["res://.godot/imported/player.png-420056987a34bb60bb5e9255aa4767bb.ctex"]
+source_file="res://assets/OGPC MC Right Facing Pixel.png"
+dest_files=["res://.godot/imported/OGPC MC Right Facing Pixel.png-4d424590c204e2a6d442a20cd935a4aa.ctex"]
 
 [params]
 

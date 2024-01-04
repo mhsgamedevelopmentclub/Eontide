@@ -1,12 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci4ticeim6oru"]
+[gd_scene load_steps=4 format=3 uid="uid://ci4ticeim6oru"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://assets/character_1.tscn" id="1_l37at"]
 [ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://assets/character_2.tscn" id="2_f37pr"]
+[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_rnujy"]
 
 [node name="Main" type="Node2D"]
 
 [node name="Character_1" parent="." instance=ExtResource("1_l37at")]
 position = Vector2(228, 171)
 
+[node name="Camera" type="Camera2D" parent="Character_1"]
+script = ExtResource("2_rnujy")
+
 [node name="Character_2" parent="." instance=ExtResource("2_f37pr")]
 position = Vector2(658, 200)
+
+[node name="TileMap" type="TileMap" parent="."]
+format = 2

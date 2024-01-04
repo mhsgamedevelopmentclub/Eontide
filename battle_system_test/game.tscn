@@ -1,13 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://rw4022tw5dyk"]
+[gd_scene load_steps=5 format=3 uid="uid://rw4022tw5dyk"]
 
 [ext_resource type="Script" path="res://battle_system_test/turn_queue.gd" id="1_l861i"]
 [ext_resource type="PackedScene" uid="uid://bjsu0h8ob28x" path="res://battle_system_test/player_actor.tscn" id="1_rmw7m"]
+[ext_resource type="PackedScene" uid="uid://crks0u1dcickr" path="res://battle_system_test/hud.tscn" id="1_x3gjc"]
 [ext_resource type="PackedScene" uid="uid://c2wfy5me6dyxi" path="res://battle_system_test/enemy_actor.tscn" id="2_j0rps"]
 
 [node name="Game" type="Node"]
 editor_description = "Main scene for battle system test"
 
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="HUD" parent="." instance=ExtResource("1_x3gjc")]
 
 [node name="TurnQueue" type="Node" parent="."]
 script = ExtResource("1_l861i")

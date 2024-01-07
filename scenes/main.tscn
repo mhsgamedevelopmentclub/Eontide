@@ -1,19 +1,37 @@
-[gd_scene load_steps=4 format=3 uid="uid://ci4ticeim6oru"]
+[gd_scene load_steps=7 format=3 uid="uid://ci4ticeim6oru"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://assets/character_1.tscn" id="1_l37at"]
 [ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://assets/character_2.tscn" id="2_f37pr"]
-[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_rnujy"]
+[ext_resource type="Script" path="res://scenes/Camera_follow.gd" id="2_so2u3"]
+[ext_resource type="Texture2D" uid="uid://414bsgutxbe5" path="res://assets/OGPC Tilemap Sidewalk.png" id="4_2k6lw"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bu0k6"]
+texture = ExtResource("4_2k6lw")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_f8c38"]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_bu0k6")
 
 [node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_f8c38")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 1, 0, 0, 65537, 0, 0, 65538, 0, 0, 131074, 0, 0, 131075, 0, 0, 196612, 0, 0, 196613, 0, 0, 196614, 0, 0, 262150, 0, 0, 262151, 0, 0, 262152, 0, 0, 2, 0, 0, 3, 0, 0, 4, 0, 0, 5, 0, 0, 65541, 0, 0, 65542, 0, 0, 65543, 0, 0, 6, 0, 0, 7, 0, 0, 8, 0, 0, 65544, 0, 0, 131080, 0, 0, 196616, 0, 0, 196615, 0, 0, 131079, 0, 0, 131078, 0, 0, 131077, 0, 0, 131076, 0, 0, 65539, 0, 0, 65540, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 262145, 0, 0, 262146, 0, 0, 262147, 0, 0, 262148, 0, 0, 262149, 0, 0, 131073, 0, 0, 196609, 0, 0, 196610, 0, 0, 196611, 0, 0, 327680, 0, 0, 327681, 0, 0, 327682, 0, 0, 327683, 0, 0, 327684, 0, 0, 327685, 0, 0, 327686, 0, 0, 327687, 0, 0, 327688, 0, 0, 9, 0, 0, 65545, 0, 0, 131081, 0, 0, 196617, 0, 0, 262153, 0, 0, 327689, 0, 0, 393216, 0, 0, 393217, 0, 0, 393218, 0, 0, 393219, 0, 0, 393220, 0, 0, 393221, 0, 0, 393222, 0, 0, 393223, 0, 0, 393224, 0, 0, 393225, 0, 0, 10, 0, 0, 65546, 0, 0, 131082, 0, 0, 196618, 0, 0, 262154, 0, 0, 327690, 0, 0, 393226, 0, 0)
 
 [node name="Character_1" parent="." instance=ExtResource("1_l37at")]
 position = Vector2(228, 171)
 
-[node name="Camera" type="Camera2D" parent="Character_1"]
-script = ExtResource("2_rnujy")
+[node name="Camera_follow" type="Camera2D" parent="Character_1" node_paths=PackedStringArray("tilemap")]
+scale = Vector2(0.835876, 0.6864)
+limit_left = 0
+limit_top = 0
+limit_right = 1408
+limit_bottom = 896
+script = ExtResource("2_so2u3")
+tilemap = NodePath("../../TileMap")
 
 [node name="Character_2" parent="." instance=ExtResource("2_f37pr")]
 position = Vector2(658, 200)
-
-[node name="TileMap" type="TileMap" parent="."]
-format = 2

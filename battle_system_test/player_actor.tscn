@@ -5,6 +5,7 @@
 
 [node name="PlayerActor" type="Node2D"]
 script = ExtResource("1_02pmv")
+metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1

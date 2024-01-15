@@ -5,6 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cm2ixvpaqxaiq" path="res://battle_system_test/turn_wheel.tscn" id="2_32e87"]
 
 [node name="HUD" type="CanvasLayer"]
+layer = -1
 follow_viewport_enabled = true
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -13,6 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+metadata/_edit_lock_ = true
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
@@ -31,7 +33,7 @@ size_flags_horizontal = 3
 size_flags_stretch_ratio = 7.0
 alignment = 2
 
-[node name="ColorRect" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
+[node name="Background" type="ColorRect" parent="HBoxContainer/VBoxContainer2"]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 7.0
@@ -41,3 +43,12 @@ color = Color(0.360784, 0.360784, 0.360784, 1)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
+
+[node name="ColorRect" type="ColorRect" parent="."]
+z_index = -1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.0627451, 1, 1, 1)

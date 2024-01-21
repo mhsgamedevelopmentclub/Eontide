@@ -6,6 +6,8 @@
 custom_minimum_size = Vector2(140, 40)
 offset_right = 140.0
 offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 color = Color(1, 0, 1, 1)
 script = ExtResource("1_0bunm")
 metadata/_edit_group_ = true

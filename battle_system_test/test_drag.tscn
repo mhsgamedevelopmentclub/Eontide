@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://nelwrqknq3o5"]
+
+[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/skill_slot_container.tscn" id="1_cflfo"]
+[ext_resource type="PackedScene" uid="uid://d3lreodvcwows" path="res://battle_system_test/skill_slot_ui.tscn" id="2_gcl6e"]
+
+[node name="Test_Drag" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Skill Slot Container" parent="HBoxContainer" instance=ExtResource("1_cflfo")]
+layout_mode = 2
+
+[node name="Skill Slot UI" parent="HBoxContainer/Skill Slot Container" instance=ExtResource("2_gcl6e")]
+layout_mode = 2
+label = "1"
+
+[node name="Skill Slot UI2" parent="HBoxContainer/Skill Slot Container" instance=ExtResource("2_gcl6e")]
+layout_mode = 2
+label = "2"
+
+[node name="Skill Slot UI3" parent="HBoxContainer/Skill Slot Container" instance=ExtResource("2_gcl6e")]
+layout_mode = 2
+label = "3"
+
+[node name="ColorRect" type="ColorRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="Skill Slot Container2" parent="HBoxContainer" instance=ExtResource("1_cflfo")]
+layout_mode = 2

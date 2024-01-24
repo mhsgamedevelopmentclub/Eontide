@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://nelwrqknq3o5"]
 
-[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/skill_slot_container.tscn" id="1_cflfo"]
-[ext_resource type="PackedScene" uid="uid://d3lreodvcwows" path="res://battle_system_test/skill_slot_ui.tscn" id="2_gcl6e"]
+[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/scenes/skill_slot_container.tscn" id="1_cflfo"]
+[ext_resource type="PackedScene" uid="uid://d3lreodvcwows" path="res://battle_system_test/scenes/skill_slot_ui.tscn" id="2_gcl6e"]
 
 [node name="Test_Drag" type="Control"]
 layout_mode = 3

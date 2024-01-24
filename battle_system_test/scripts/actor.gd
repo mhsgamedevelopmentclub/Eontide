@@ -1,5 +1,5 @@
 class_name Actor
-extends Node2D
+extends Control
 
 signal do_damage(damage: int)
 signal turn_complete
@@ -20,7 +20,7 @@ var changing_time: bool = false
 func play_turn() -> void:
 	# will likely later pass resources as args
 	# instead of pre-defined functions
-	if changing_time:
+	if changing_time or turn_queue.size() == 0:
 		change_moves()
 		changing_time = false
 	print("current health: ", cur_health)

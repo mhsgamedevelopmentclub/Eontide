@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgkvlie7gu3cx"]
 
-[ext_resource type="PackedScene" uid="uid://cbng03ofnhoxw" path="res://battle_system_test/atb_bar.tscn" id="1_csny1"]
+[ext_resource type="PackedScene" uid="uid://cbng03ofnhoxw" path="res://battle_system_test/scenes/atb_bar.tscn" id="1_csny1"]
 
 [node name="ATB Container" type="Control"]
 layout_mode = 3

@@ -11,7 +11,6 @@ metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(3, 3)
 texture = ExtResource("2_i0mdl")
 
 [node name="ATBTimer" type="Timer" parent="."]

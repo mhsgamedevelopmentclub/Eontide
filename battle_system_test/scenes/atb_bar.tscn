@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://cbng03ofnhoxw"]
+[gd_scene load_steps=2 format=3 uid="uid://cbng03ofnhoxw"]
+
+[ext_resource type="Script" path="res://battle_system_test/scripts/atb_bar.gd" id="1_usbw7"]
 
 [node name="ATB Bar" type="HBoxContainer"]
 anchors_preset = 15
@@ -8,6 +10,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_usbw7")
 
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -29,3 +32,7 @@ custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 20.0
+autostart = true

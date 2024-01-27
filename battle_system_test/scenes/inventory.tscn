@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bydfq2apgvxox"]
+[gd_scene load_steps=3 format=3 uid="uid://bydfq2apgvxox"]
 
+[ext_resource type="Script" path="res://battle_system_test/scripts/inventory.gd" id="1_g750g"]
 [ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/scenes/skill_slot_container.tscn" id="1_rc6hc"]
 
 [node name="Inventory" type="Control"]
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_g750g")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

@@ -2,6 +2,7 @@ class_name Actor
 extends Control
 
 signal do_damage(damage: int)
+signal open_change_turn
 signal turn_complete
 
 @export var max_health: int = 100
@@ -21,7 +22,7 @@ func play_turn() -> void:
 	# will likely later pass resources as args
 	# instead of pre-defined functions
 	if changing_time or turn_queue.size() == 0:
-		change_moves()
+		emit_signal('open_change_turn')
 		changing_time = false
 	print("current health: ", cur_health)
 	print("current action: ", turn_queue[cur_idx])
@@ -36,6 +37,9 @@ func play_turn() -> void:
 	# for some reason turn queue isn't detecting this
 	emit_signal("turn_complete")
 
+func reorder_turn(turn_list: Array[String]) -> void:
+	pass
+
 func _ready() -> void:
 	# pretend that this is taken from the player's
 	# inventory as an argument
@@ -45,9 +49,6 @@ func _ready() -> void:
 		"heal"
 	]
 	turn_queue += turn_list
-
-func change_moves() -> void:
-	pass
 
 ###################################
 # Actor actions

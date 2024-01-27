@@ -16,6 +16,8 @@ script = ExtResource("1_l861i")
 [node name="PlayerActor" parent="TurnQueue" instance=ExtResource("1_rmw7m")]
 
 [node name="EnemyActor" parent="TurnQueue" instance=ExtResource("2_j0rps")]
+def_strength = 3
+heal_strength = 1
 
 [node name="HUD" parent="." instance=ExtResource("1_x3gjc")]
 

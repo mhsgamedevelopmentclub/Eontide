@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm2ixvpaqxaiq"]
+[gd_scene load_steps=3 format=3 uid="uid://cm2ixvpaqxaiq"]
 
+[ext_resource type="Script" path="res://battle_system_test/scripts/turn_wheel.gd" id="1_0vpr8"]
 [ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/scenes/skill_slot_container.tscn" id="1_d8ap7"]
 
 [node name="Turn Wheel" type="Control"]
@@ -11,6 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+script = ExtResource("1_0vpr8")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://dgkvlie7gu3cx"]
 
-[ext_resource type="PackedScene" uid="uid://cbng03ofnhoxw" path="res://battle_system_test/scenes/atb_bar.tscn" id="1_csny1"]
+[ext_resource type="Script" path="res://battle_system_test/scripts/atb_container.gd" id="1_0oqqf"]
 
 [node name="ATB Container" type="Control"]
 layout_mode = 3
@@ -9,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_0oqqf")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -27,9 +28,3 @@ anchor_top = 0.1
 anchor_right = 0.9
 anchor_bottom = 0.9
 alignment = 1
-
-[node name="ATB Bar" parent="VBoxContainer" instance=ExtResource("1_csny1")]
-layout_mode = 2
-
-[node name="ATB Bar2" parent="VBoxContainer" instance=ExtResource("1_csny1")]
-layout_mode = 2

@@ -13,7 +13,7 @@ func _can_drop_data(_at_position: Vector2, data) -> bool:
 
 func _drop_data(_at_position: Vector2, data):
 	var ui_copy: SkillSlot = skill_slot_ui.instantiate()
-	ui_copy.label = data.label
+	ui_copy.init(data.name)
 	add_child(ui_copy)
 	emit_signal('slot_changed', data)
 

@@ -19,5 +19,4 @@ func init(actors: Array[Node]) -> void:
 				var new_skill := skill_ui.instantiate()
 				new_skill.init(skill)
 				inventory.add(new_skill)
-			actor.connect('open_change_turn', Callable(turn_wheel, 'on_open_change_turn'))
-			turn_wheel.connect('update_turn_ord', Callable(actor, 'reorder_turn'))
+			actor.sync_queue(turn_wheel)

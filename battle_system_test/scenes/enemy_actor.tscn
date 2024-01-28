@@ -3,18 +3,10 @@
 [ext_resource type="Script" path="res://battle_system_test/scripts/enemy_actor.gd" id="1_u3oni"]
 [ext_resource type="Texture2D" uid="uid://ddaak0khqbkou" path="res://battle_system_test/assets/enemy.png" id="2_80urp"]
 
-[node name="EnemyActor" type="Control"]
-layout_mode = 3
-anchors_preset = 0
+[node name="EnemyActor" type="Node2D"]
 script = ExtResource("1_u3oni")
 metadata/_edit_group_ = true
 
 [node name="Sprite" type="Sprite2D" parent="."]
 scale = Vector2(0.165, 0.165)
 texture = ExtResource("2_80urp")
-
-[node name="ATBTimer" type="Timer" parent="."]
-wait_time = 20.0
-autostart = true
-
-[connection signal="timeout" from="ATBTimer" to="." method="_on_atb_timer_timeout"]

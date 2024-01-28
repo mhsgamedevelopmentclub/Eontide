@@ -1,11 +1,19 @@
+class_name TurnWheel
 extends Control
 
+signal update_turn_ord(turn_list: Array[String])
 
-# Called when the node enters the scene tree for the first time.
+@onready var button := $Background/MarginContainer/VBoxContainer/Button
+@onready var skill_container := $"Background/MarginContainer/VBoxContainer/ColorRect/Skill Slot Container"
+
 func _ready():
-	pass # Replace with function body.
+	button.disabled = true
 
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+func on_open_change_turn() -> void:
+	button.disabled = false
+	await button.pressed
+	var turn_list: Array[String] = []
+	for skill in skill_container.get_children(): 
+		turn_list.append(skill.name) 
+	emit_signal("update_turn_ord", turn_list)
+	button.disabled = true

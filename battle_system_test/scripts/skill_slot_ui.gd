@@ -2,6 +2,7 @@ extends ColorRect
 class_name SkillSlot
 
 func init(label: String) -> void:
+	name = label
 	$Label.text = label
 
 func _get_drag_data(_at_position: Vector2) -> SkillSlot:

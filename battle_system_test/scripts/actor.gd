@@ -21,6 +21,7 @@ func play_turn() -> void:
 	# will likely later pass resources as args
 	# instead of pre-defined functions
 	if changing_time or turn_cycle.size() == 0:
+		print("shuffling...")
 		@warning_ignore("redundant_await")
 		await change_moves()
 		cur_idx = 0

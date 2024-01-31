@@ -20,12 +20,13 @@ text = "Test"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+[node name="ProgressBar" type="ProgressBar" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 30)
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 size_flags_stretch_ratio = 2.0
+show_percentage = false
 
 [node name="TextureRect" type="TextureRect" parent="."]
 custom_minimum_size = Vector2(2.08165e-12, 30)
@@ -33,6 +34,6 @@ layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
 
-[node name="Timer" type="Timer" parent="."]
+[node name="Timer" type="Timer" parent="." groups=["battle_timer"]]
 wait_time = 20.0
 autostart = true

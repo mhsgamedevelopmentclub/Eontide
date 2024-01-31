@@ -6,7 +6,7 @@ signal slot_changed(skill_slot_ui)
 func _ready():
 	var containers := get_tree().get_nodes_in_group("drag_container")
 	for container in containers:
-		container.connect('slot_changed', Callable(self, 'on_data_dropped'))
+		container.connect('slot_changed', on_data_dropped)
 
 func _can_drop_data(_at_position: Vector2, data) -> bool:
 	return data is Node and data.is_in_group('draggable')

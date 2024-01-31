@@ -1,5 +1,7 @@
 extends Actor
 
+@onready var sprite := load("res://assets/OGPC MC Front Facing Pixel.png")
+
 func change_moves() -> void:
 	# pretend there's like a whole AI here
 	print("shuffling... ")

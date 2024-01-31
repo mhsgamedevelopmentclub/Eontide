@@ -1,12 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c2wfy5me6dyxi"]
+[gd_scene load_steps=2 format=3 uid="uid://c2wfy5me6dyxi"]
 
 [ext_resource type="Script" path="res://battle_system_test/scripts/enemy_actor.gd" id="1_u3oni"]
-[ext_resource type="Texture2D" uid="uid://ddaak0khqbkou" path="res://battle_system_test/assets/enemy.png" id="2_80urp"]
 
 [node name="EnemyActor" type="Node2D"]
 script = ExtResource("1_u3oni")
-metadata/_edit_group_ = true
-
-[node name="Sprite" type="Sprite2D" parent="."]
-scale = Vector2(0.165, 0.165)
-texture = ExtResource("2_80urp")

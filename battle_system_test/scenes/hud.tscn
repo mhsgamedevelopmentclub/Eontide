@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=3 uid="uid://crks0u1dcickr"]
+
+[ext_resource type="PackedScene" uid="uid://bydfq2apgvxox" path="res://battle_system_test/scenes/inventory.tscn" id="1_4bbh3"]
+[ext_resource type="Script" path="res://battle_system_test/scripts/hud.gd" id="1_7oh48"]
+[ext_resource type="PackedScene" uid="uid://cm2ixvpaqxaiq" path="res://battle_system_test/scenes/turn_wheel.tscn" id="2_32e87"]
+[ext_resource type="PackedScene" uid="uid://dgkvlie7gu3cx" path="res://battle_system_test/scenes/atb_container.tscn" id="3_267x7"]
+[ext_resource type="PackedScene" uid="uid://bmrtuohicjoho" path="res://battle_system_test/scenes/battle_background.tscn" id="4_m153h"]
+
+[node name="HUD" type="CanvasLayer"]
+layer = -1
+follow_viewport_enabled = true
+script = ExtResource("1_7oh48")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+
+[node name="Inventory" parent="HBoxContainer/VBoxContainer" instance=ExtResource("1_4bbh3")]
+layout_mode = 2
+
+[node name="Turn Wheel" parent="HBoxContainer/VBoxContainer" instance=ExtResource("2_32e87")]
+layout_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 7.0
+alignment = 2
+
+[node name="Battle Background" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("4_m153h")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 7.0
+
+[node name="ATB Container" parent="HBoxContainer/VBoxContainer2" instance=ExtResource("3_267x7")]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0

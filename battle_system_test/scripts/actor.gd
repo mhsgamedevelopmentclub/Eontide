@@ -2,7 +2,7 @@ class_name Actor
 extends Node2D
 
 signal do_damage(damage: int)
-signal turn_complete
+signal open_change_turn
 
 @export var max_health: int = 100
 var cur_health := max_health
@@ -11,7 +11,7 @@ var cur_health := max_health
 @export var def_strength: int = 5
 @export var heal_strength: int = 2
 
-var turn_queue: Array[String]
+var turn_cycle: Array[String]
 var cur_idx := 0
 
 var defending: bool = false
@@ -20,34 +20,37 @@ var changing_time: bool = false
 func play_turn() -> void:
 	# will likely later pass resources as args
 	# instead of pre-defined functions
-	if changing_time:
-		change_moves()
+	if changing_time or turn_cycle.size() == 0:
+		print("shuffling...")
+		@warning_ignore("redundant_await")
+		await change_moves()
+		cur_idx = 0
 		changing_time = false
 	print("current health: ", cur_health)
-	print("current action: ", turn_queue[cur_idx])
+	print("current action: ", turn_cycle[cur_idx])
 	defending = false
-	call(turn_queue[cur_idx])
+	call(turn_cycle[cur_idx])
 	# needed to simulate fake animation time
-	# ...and also because turn queue isn't reading 
-	# emitted signal
 	await get_tree().create_timer(3).timeout
-	cur_idx = (cur_idx + 1) % turn_queue.size()
+	cur_idx = (cur_idx + 1) % turn_cycle.size()
 	print("Turn complete")
-	# for some reason turn queue isn't detecting this
-	emit_signal("turn_complete")
+
+func on_timer_timeout() -> void:
+	changing_time = true
+
+func change_moves() -> void:
+	pass
 
 func _ready() -> void:
 	# pretend that this is taken from the player's
 	# inventory as an argument
-	var turn_list: Array[String] = [
-		"attack",
-		"defend",
-		"heal"
-	]
-	turn_queue += turn_list
-
-func change_moves() -> void:
-	pass
+	if not name == "PlayerActor":
+		var turn_list: Array[String] = [
+			"attack",
+			"defend",
+			"heal"
+		]
+		turn_cycle += turn_list
 
 ###################################
 # Actor actions

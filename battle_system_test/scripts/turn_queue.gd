@@ -3,7 +3,7 @@ extends Node
 var active_actor: Actor
 var turn_count: int = 0
 
-func _ready() -> void:
+func init() -> void:
 	active_actor = get_child(0)
 	play_turn()
 

@@ -12,4 +12,4 @@ func change_moves() -> void:
 func _on_player_actor_do_damage(damage: int) -> void:
 	cur_health -= damage
 	if cur_health <= 0:
-		cur_health = 0
+		emit_signal("death")

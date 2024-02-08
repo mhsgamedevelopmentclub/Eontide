@@ -4,6 +4,7 @@ var active_actor: Actor
 var turn_count: int = 0
 
 func init() -> void:
+	# TODO: connect actor signals to each other
 	active_actor = get_child(0)
 	play_turn()
 

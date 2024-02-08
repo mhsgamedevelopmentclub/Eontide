@@ -3,6 +3,9 @@ extends Node2D
 
 signal do_damage(damage: int)
 signal open_change_turn
+signal toggle_timers
+signal start_new_cycle
+signal death
 
 @export var max_health: int = 100
 var cur_health := max_health
@@ -22,10 +25,13 @@ func play_turn() -> void:
 	# instead of pre-defined functions
 	if changing_time or turn_cycle.size() == 0:
 		print("shuffling...")
+		emit_signal('toggle_timers')
 		@warning_ignore("redundant_await")
 		await change_moves()
-		cur_idx = 0
+		emit_signal('toggle_timers')
+		emit_signal('start_new_cycle')
 		changing_time = false
+		cur_idx = 0
 	print("current health: ", cur_health)
 	print("current action: ", turn_cycle[cur_idx])
 	defending = false

@@ -10,6 +10,7 @@ func init(actor: Actor) -> void:
 	timer = $Timer
 	$Label.text = actor.name
 	timer.connect('timeout', actor.on_timer_timeout)
+	actor.connect('start_new_cycle', timer.start)
 	progress_bar.max_value = timer.wait_time
 
 func _process(_delta) -> void:

@@ -19,4 +19,4 @@ func reorder_turn(turn_list: Array[String]) -> void:
 func _on_enemy_actor_do_damage(damage: int) -> void:
 	cur_health -= damage
 	if cur_health <= 0:
-		cur_health = 0
+		emit_signal("death")

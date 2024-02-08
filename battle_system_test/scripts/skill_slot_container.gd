@@ -12,10 +12,10 @@ func _can_drop_data(_at_position: Vector2, data) -> bool:
 	return data is Node and data.is_in_group('draggable')
 
 func _drop_data(_at_position: Vector2, data):
+	emit_signal('slot_changed', data)
 	var ui_copy: SkillSlot = skill_slot_ui.instantiate()
 	ui_copy.init(data.name)
 	add_child(ui_copy)
-	emit_signal('slot_changed', data)
 
 func on_data_dropped(dropped_item):
 	if dropped_item in get_children():

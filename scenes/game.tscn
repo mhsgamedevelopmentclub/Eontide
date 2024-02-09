@@ -1,12 +1,12 @@
 [gd_scene load_steps=7 format=3 uid="uid://ci4ticeim6oru"]
 
-[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://assets/character_1.tscn" id="1_l37at"]
-[ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://assets/character_2.tscn" id="2_f37pr"]
-[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_rnujy"]
-[ext_resource type="Texture2D" uid="uid://414bsgutxbe5" path="res://OGPC Tilemap Sidewalk.png" id="4_nn155"]
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://assets/character_1.tscn" id="1_4muek"]
+[ext_resource type="Script" path="res://scenes/Camera.gd" id="2_fffi3"]
+[ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://assets/character_2.tscn" id="3_hebh0"]
+[ext_resource type="Texture2D" uid="uid://414bsgutxbe5" path="res://OGPC Tilemap Sidewalk.png" id="4_vcc8a"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qak8l"]
-texture = ExtResource("4_nn155")
+texture = ExtResource("4_vcc8a")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
@@ -16,9 +16,9 @@ texture_region_size = Vector2i(128, 128)
 tile_size = Vector2i(128, 128)
 sources/0 = SubResource("TileSetAtlasSource_qak8l")
 
-[node name="Main" type="Node2D"]
+[node name="Game" type="Node2D"]
 
-[node name="Character_1" parent="." instance=ExtResource("1_l37at")]
+[node name="Character_1" parent="." instance=ExtResource("1_4muek")]
 position = Vector2(228, 171)
 
 [node name="Camera" type="Camera2D" parent="Character_1"]
@@ -27,9 +27,9 @@ limit_top = 0
 limit_right = 2304
 limit_bottom = 1280
 limit_smoothed = true
-script = ExtResource("2_rnujy")
+script = ExtResource("2_fffi3")
 
-[node name="Character_2" parent="." instance=ExtResource("2_f37pr")]
+[node name="Character_2" parent="." instance=ExtResource("3_hebh0")]
 position = Vector2(658, 200)
 
 [node name="TileMap" type="TileMap" parent="."]

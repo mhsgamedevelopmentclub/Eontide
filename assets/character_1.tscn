@@ -9,17 +9,17 @@ radius = 55.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ucj8"]
 radius = 86.1452
 
-[sub_resource type="Animation" id="Animation_hvwgv"]
-resource_name = "Forward"
-
 [sub_resource type="Animation" id="Animation_cqb8v"]
 resource_name = "Backward"
 
-[sub_resource type="Animation" id="Animation_wm5u2"]
-resource_name = "Right"
+[sub_resource type="Animation" id="Animation_hvwgv"]
+resource_name = "Forward"
 
 [sub_resource type="Animation" id="Animation_inbq3"]
 resource_name = "Left"
+
+[sub_resource type="Animation" id="Animation_wm5u2"]
+resource_name = "Right"
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4cl6q"]
 _data = {

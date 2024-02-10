@@ -7,13 +7,13 @@ extends Control
 @onready var credits_button := $HBoxContainer/VBoxContainer/Credits
 
 func _ready() -> void:
-	connect(new_game_button.pressed, new_game)
-	connect(load_game_button.pressed, load_game)
-	connect(settings_button.pressed, open_settings)
-	connect(credits_button.pressed, open_settings)
+	new_game_button.connect('pressed', new_game)
+	load_game_button.connect('pressed', load_game)
+	settings_button.connect('pressed', open_settings)
+	credits_button.connect('pressed', open_settings)
 
 func new_game() -> void:
-	pass
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 func load_game() -> void:
 	pass

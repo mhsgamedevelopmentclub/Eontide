@@ -65,4 +65,6 @@ locale/translations_pot_files=PackedStringArray("res://dialogues/exampleDialogue
 
 [layer_names]
 
-2d_physics/layer_5="Actionables"
+2d_physics/layer_2="Player"
+2d_physics/layer_3="Battle"
+2d_physics/layer_5="Dialogue"

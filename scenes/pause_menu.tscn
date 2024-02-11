@@ -1,0 +1,59 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7ebru3o0xkg1"]
+
+[ext_resource type="Script" path="res://scenes/pause_menu.gd" id="1_vtubd"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uig15"]
+font_size = 32
+
+[node name="Pause Menu" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_vtubd")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(0, 0, 0, 0.25098)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 120
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 120
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="Paused" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 6
+text = "Paused"
+label_settings = SubResource("LabelSettings_uig15")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back 2 Game" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Back to Game"
+
+[node name="Main Menu" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(120, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Main Menu"

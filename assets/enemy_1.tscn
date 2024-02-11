@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://d1hm5lxcu0rrm"]
+
+[ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="1_tla0k"]
+[ext_resource type="Script" path="res://assets/enemy_1.gd" id="1_vjxoc"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vj3jw"]
+radius = 60.1664
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_w655l"]
+radius = 287.341
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_14u1i"]
+radius = 53.4603
+
+[node name="enemy_1" type="CharacterBody2D"]
+script = ExtResource("1_vjxoc")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_vj3jw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_tla0k")
+
+[node name="Direction" type="Marker2D" parent="."]
+
+[node name="Actionable" type="Area2D" parent="Direction"]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Direction/Actionable"]
+shape = SubResource("CircleShape2D_w655l")
+
+[node name="CollisionDetector" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
+shape = SubResource("CircleShape2D_14u1i")
+
+[connection signal="body_entered" from="Direction/Actionable" to="." method="_on_actionable_body_entered"]
+[connection signal="body_exited" from="Direction/Actionable" to="." method="_on_actionable_body_exited"]
+[connection signal="area_entered" from="CollisionDetector" to="." method="_on_collision_detector_area_entered"]
+[connection signal="area_exited" from="CollisionDetector" to="." method="_on_collision_detector_area_exited"]

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://414bsgutxbe5"
-path="res://.godot/imported/OGPC Tilemap Sidewalk.png-bf9c36b8bdd01c70be1f1fe0f95deaae.ctex"
+path="res://.godot/imported/OGPC Tilemap Sidewalk.png-de305d844aa4f043905936ae395558a9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://OGPC Tilemap Sidewalk.png"
-dest_files=["res://.godot/imported/OGPC Tilemap Sidewalk.png-bf9c36b8bdd01c70be1f1fe0f95deaae.ctex"]
+source_file="res://assets/OGPC Tilemap Sidewalk.png"
+dest_files=["res://.godot/imported/OGPC Tilemap Sidewalk.png-de305d844aa4f043905936ae395558a9.ctex"]
 
 [params]
 

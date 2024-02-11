@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://boprcndkqj0ww"
-path="res://.godot/imported/Bunch of flowers copy.png-a639cff944fd3ece852f660046bcfeb7.ctex"
+path="res://.godot/imported/Bunch of flowers copy.png-874187606e39e01cb21f19975d5ba93a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Bunch of flowers copy.png"
-dest_files=["res://.godot/imported/Bunch of flowers copy.png-a639cff944fd3ece852f660046bcfeb7.ctex"]
+source_file="res://assets/Bunch of flowers copy.png"
+dest_files=["res://.godot/imported/Bunch of flowers copy.png-874187606e39e01cb21f19975d5ba93a.ctex"]
 
 [params]
 

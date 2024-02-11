@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b30bns6cbkw38"
-path="res://.godot/imported/Flower copy.png-49a09588ea0f684ba9a589b933065961.ctex"
+uid="uid://b8pqcumxrbn03"
+path="res://.godot/imported/Water Tile copy.png-eade46dfd1fcc9b1ae1ed169c55febad.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Flower copy.png"
-dest_files=["res://.godot/imported/Flower copy.png-49a09588ea0f684ba9a589b933065961.ctex"]
+source_file="res://assets/Water Tile copy.png"
+dest_files=["res://.godot/imported/Water Tile copy.png-eade46dfd1fcc9b1ae1ed169c55febad.ctex"]
 
 [params]
 

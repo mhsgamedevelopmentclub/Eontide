@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b8pqcumxrbn03"
-path="res://.godot/imported/Water Tile copy.png-5864a16e1799590657a86f6cf0f58f93.ctex"
+uid="uid://b1v8qk3u0r2ue"
+path="res://.godot/imported/overworld.png-18e77bb2dfe78cdaf8b7430b2b2a90dc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Water Tile copy.png"
-dest_files=["res://.godot/imported/Water Tile copy.png-5864a16e1799590657a86f6cf0f58f93.ctex"]
+source_file="res://assets/overworld.png"
+dest_files=["res://.godot/imported/overworld.png-18e77bb2dfe78cdaf8b7430b2b2a90dc.ctex"]
 
 [params]
 

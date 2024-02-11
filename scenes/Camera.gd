@@ -1,10 +1,11 @@
+class_name OverworldCamera
 extends Camera2D
 
-# Called when the node enters the scene tree for the first time.
+@export var tilemap: TileMap
+
 func _ready():
-	pass
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
+	var mapRect = tilemap.get_used_rect()
+	var tileSize = tilemap.tile_set.tile_size
+	var worldSizeInPixels = mapRect.end * tileSize
+	limit_right = worldSizeInPixels.x
+	limit_bottom = worldSizeInPixels.y

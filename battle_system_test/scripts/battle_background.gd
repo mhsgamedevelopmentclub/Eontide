@@ -16,7 +16,5 @@ func _construct_sprite(actor: Node) -> CenterContainer:
 	var container := CenterContainer.new()
 	container.size_flags_horizontal = SIZE_SHRINK_CENTER
 	container.size_flags_vertical = SIZE_SHRINK_CENTER
-	var sprite := Sprite2D.new()
-	sprite.texture = actor.sprite
-	container.add_child(sprite)
+	container.add_child(actor.sprite)
 	return container as CenterContainer

@@ -1,7 +1,5 @@
 extends Actor
 
-@onready var sprite := load("res://assets/OGPC MC Front Facing Pixel.png")
-
 var turn_ord_updater: Signal
 
 func change_moves() -> void:
@@ -17,6 +15,8 @@ func reorder_turn(turn_list: Array[String]) -> void:
 	turn_cycle = turn_list
 
 func _on_enemy_actor_do_damage(damage: int) -> void:
+	sprite.modulate = Color(1, 0, 0)
 	cur_health -= damage
 	if cur_health <= 0:
 		emit_signal("death")
+	sprite.modulate = Color(1, 1, 1)

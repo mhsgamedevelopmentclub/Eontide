@@ -7,6 +7,8 @@ signal toggle_timers
 signal start_new_cycle
 signal death
 
+@onready var sprite := Sprite2D.new()
+
 @export var max_health: int = 100
 var cur_health := max_health
 
@@ -38,6 +40,7 @@ func play_turn() -> void:
 	call(turn_cycle[cur_idx])
 	# needed to simulate fake animation time
 	await get_tree().create_timer(3).timeout
+	sprite.modulate = Color(1, 1, 1)
 	cur_idx = (cur_idx + 1) % turn_cycle.size()
 	print("Turn complete")
 
@@ -48,6 +51,8 @@ func change_moves() -> void:
 	pass
 
 func _ready() -> void:
+	# REALLY bad solution but idc
+	sprite.texture = load("res://assets/OGPC MC Front Facing Pixel.png")
 	# pretend that this is taken from the player's
 	# inventory as an argument
 	if not name == "PlayerActor":
@@ -64,14 +69,17 @@ func _ready() -> void:
 ###################################
 func attack() -> void:
 	print("attacking...")
+	sprite.modulate = Color(1, 0, 0)
 	emit_signal("do_damage", atk_strength)
 
 func defend() -> void:
 	print("defending...")
+	sprite.modulate = Color(0, 0, 1)
 	defending = true
 
 func heal() -> void:
 	print("healing...")
+	sprite.modulate = Color(0, 1, 0)
 	cur_health += heal_strength
 	if cur_health > max_health:
 		cur_health = max_health

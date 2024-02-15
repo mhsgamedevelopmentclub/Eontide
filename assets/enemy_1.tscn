@@ -12,13 +12,14 @@ radius = 287.341
 [sub_resource type="CircleShape2D" id="CircleShape2D_14u1i"]
 radius = 53.4603
 
-[node name="enemy_1" type="CharacterBody2D"]
+[node name="enemy_1" type="CharacterBody2D" groups=["enemy"]]
 script = ExtResource("1_vjxoc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_vj3jw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
 texture = ExtResource("1_tla0k")
 
 [node name="Direction" type="Marker2D" parent="."]

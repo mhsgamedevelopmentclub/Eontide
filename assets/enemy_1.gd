@@ -1,9 +1,14 @@
 extends CharacterBody2D
 
+signal start_battle
+
 var speed = 100
 var player_chase = null
 var player = null
 var collision = false
+
+func _ready() -> void:
+	connect('start_battle', get_parent().start_battle)
 
 func _physics_process(delta):
 	if player_chase:
@@ -11,7 +16,7 @@ func _physics_process(delta):
 
 func _process(delta):
 	if collision == true:
-		get_tree().change_scene_to_file("res://battle_system_test/scenes/game.tscn")
+		emit_signal('start_battle')
 		queue_free()
 
 func _on_actionable_body_entered(body):

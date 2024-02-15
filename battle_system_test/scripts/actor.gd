@@ -2,6 +2,7 @@ class_name Actor
 extends Node2D
 
 signal do_damage(damage: int)
+signal update_health_ui(value: int)
 signal open_change_turn
 signal toggle_timers
 signal start_new_cycle
@@ -10,13 +11,13 @@ signal death
 @onready var sprite := Sprite2D.new()
 
 @export var max_health: int = 100
-var cur_health := max_health
 
 @export var atk_strength: int = 7
 @export var def_strength: int = 5
 @export var heal_strength: int = 2
 
 var turn_cycle: Array[String]
+var cur_health: int
 var cur_idx := 0
 
 var defending: bool = false
@@ -52,6 +53,7 @@ func change_moves() -> void:
 
 func _ready() -> void:
 	# REALLY bad solution but idc
+	cur_health = max_health
 	sprite.texture = load("res://assets/OGPC MC Front Facing Pixel.png")
 	# pretend that this is taken from the player's
 	# inventory as an argument
@@ -83,3 +85,4 @@ func heal() -> void:
 	cur_health += heal_strength
 	if cur_health > max_health:
 		cur_health = max_health
+	emit_signal('update_health_ui', cur_health)

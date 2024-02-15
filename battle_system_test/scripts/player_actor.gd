@@ -15,8 +15,13 @@ func reorder_turn(turn_list: Array[String]) -> void:
 	turn_cycle = turn_list
 
 func _on_enemy_actor_do_damage(damage: int) -> void:
-	sprite.modulate = Color(1, 0, 0)
-	cur_health -= damage
+	if defending:
+		cur_health -= damage / def_strength
+	else:
+		cur_health -= damage
 	if cur_health <= 0:
 		emit_signal("death")
+	emit_signal('update_health_ui', cur_health)
+	sprite.modulate = Color(1, 0, 0)
+	await get_tree().create_timer(0.25).timeout
 	sprite.modulate = Color(1, 1, 1)

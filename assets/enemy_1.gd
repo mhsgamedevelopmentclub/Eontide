@@ -12,6 +12,7 @@ func _physics_process(delta):
 func _process(delta):
 	if collision == true:
 		get_tree().change_scene_to_file("res://battle_system_test/scenes/game.tscn")
+		queue_free()
 
 func _on_actionable_body_entered(body):
 	player = body

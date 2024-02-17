@@ -1,10 +1,10 @@
 [gd_scene load_steps=6 format=3 uid="uid://rw4022tw5dyk"]
 
-[ext_resource type="Script" path="res://battle_system_test/scripts/game.gd" id="1_ammos"]
-[ext_resource type="Script" path="res://battle_system_test/scripts/turn_queue.gd" id="1_l861i"]
-[ext_resource type="PackedScene" uid="uid://bjsu0h8ob28x" path="res://battle_system_test/scenes/player_actor.tscn" id="1_rmw7m"]
-[ext_resource type="PackedScene" uid="uid://crks0u1dcickr" path="res://battle_system_test/scenes/hud.tscn" id="1_x3gjc"]
-[ext_resource type="PackedScene" uid="uid://c2wfy5me6dyxi" path="res://battle_system_test/scenes/enemy_actor.tscn" id="2_j0rps"]
+[ext_resource type="Script" path="res://scripts/game (2).gd" id="1_ammos"]
+[ext_resource type="Script" path="res://scripts/turn_queue.gd" id="1_l861i"]
+[ext_resource type="PackedScene" uid="uid://bjsu0h8ob28x" path="res://scenes/player_actor.tscn" id="1_rmw7m"]
+[ext_resource type="PackedScene" uid="uid://crks0u1dcickr" path="res://scenes/hud.tscn" id="1_x3gjc"]
+[ext_resource type="PackedScene" uid="uid://c2wfy5me6dyxi" path="res://scenes/enemy_actor.tscn" id="2_j0rps"]
 
 [node name="Game" type="Node"]
 editor_description = "Main scene for battle system test"

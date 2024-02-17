@@ -1,9 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://bydfq2apgvxox"]
+[gd_scene load_steps=3 format=3 uid="uid://cm2ixvpaqxaiq"]
 
-[ext_resource type="Script" path="res://battle_system_test/scripts/inventory.gd" id="1_g750g"]
-[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://battle_system_test/scenes/skill_slot_container.tscn" id="1_rc6hc"]
+[ext_resource type="Script" path="res://scripts/turn_wheel.gd" id="1_0vpr8"]
+[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://scenes/skill_slot_container.tscn" id="1_d8ap7"]
 
-[node name="Inventory" type="Control"]
+[node name="Turn Wheel" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -12,7 +12,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
-script = ExtResource("1_g750g")
+script = ExtResource("1_0vpr8")
 
 [node name="Background" type="ColorRect" parent="."]
 layout_mode = 1
@@ -21,7 +21,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.0941176, 0.0941176, 0.0941176, 1)
+color = Color(0.25098, 0.25098, 0.25098, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="Background"]
 layout_mode = 1
@@ -40,14 +40,20 @@ layout_mode = 2
 
 [node name="Label" type="Label" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Inventory"
+text = "Turn Order"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="Button" type="Button" parent="Background/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "Start"
+icon_alignment = 1
 
 [node name="ColorRect" type="ColorRect" parent="Background/MarginContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-color = Color(0.286275, 0.286275, 0.286275, 1)
+color = Color(0.360784, 0.360784, 0.360784, 1)
 
-[node name="Skill Slot Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("1_rc6hc")]
+[node name="Skill Slot Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("1_d8ap7")]
 layout_mode = 1

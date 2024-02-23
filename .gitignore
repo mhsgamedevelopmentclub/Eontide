@@ -1,3 +1,6 @@
+# Project specific ignores
+**/.venv/
+
 # Godot 4+ specific ignores
 .godot/
 

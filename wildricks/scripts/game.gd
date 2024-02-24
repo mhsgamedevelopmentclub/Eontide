@@ -1,7 +1,7 @@
 class_name GameManager
 extends Node2D
 
-@onready var battle_scene := preload('res://battle_system_test/scenes/game.tscn')
+@onready var battle_scene := preload('res://scenes/game (2).tscn')
 @onready var enemy_scene := preload('res://assets/enemy_1.tscn')
 @onready var pause_menu := $"Pause Menu"
 

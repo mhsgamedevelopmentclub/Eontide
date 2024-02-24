@@ -1,7 +1,7 @@
 class_name Inventory
 extends Control
 
-@onready var skill_ui := preload('res://battle_system_test/scenes/skill_slot_ui.tscn')
+@onready var skill_ui := preload('res://scenes/skill_slot_ui.tscn')
 
 @onready var container := $"Background/MarginContainer/VBoxContainer/ColorRect/Skill Slot Container"
 

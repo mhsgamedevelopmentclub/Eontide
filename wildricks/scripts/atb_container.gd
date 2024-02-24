@@ -1,7 +1,7 @@
 class_name ATBContainer
 extends Control
 
-@onready var atb_bar := preload('res://battle_system_test/scenes/atb_bar.tscn')
+@onready var atb_bar := preload('res://scenes/atb_bar.tscn')
 
 @onready var container := $VBoxContainer
 

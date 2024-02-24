@@ -1,7 +1,7 @@
 extends VBoxContainer
 
 signal slot_changed(skill_slot_ui)
-@onready var skill_slot_ui: PackedScene = preload('res://battle_system_test/scenes/skill_slot_ui.tscn')
+@onready var skill_slot_ui: PackedScene = preload('res://scenes/skill_slot_ui.tscn')
 
 func _ready():
 	var containers := get_tree().get_nodes_in_group("drag_container")

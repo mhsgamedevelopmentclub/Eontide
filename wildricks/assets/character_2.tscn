@@ -3,19 +3,22 @@
 [ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="1_85as8"]
 [ext_resource type="PackedScene" uid="uid://r72mf8u551sp" path="res://dialogues/actionable.tscn" id="2_1ph16"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_rbysw"]
-radius = 99.4585
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_652j0"]
+size = Vector2(132, 133)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_sm1e1"]
 radius = 172.838
 
 [node name="Character_2" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_85as8")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_rbysw")
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_652j0")
 
 [node name="Actionable" parent="." instance=ExtResource("2_1ph16")]
 collision_mask = 2

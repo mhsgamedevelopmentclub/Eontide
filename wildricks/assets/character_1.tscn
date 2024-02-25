@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://assets/character_1.gd" id="1_h6wdc"]
 [ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="2_hhyek"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_iw7wf"]
-radius = 34.0588
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_880ig"]
+size = Vector2(66.6913, 37.8261)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4ucj8"]
 radius = 86.1452
@@ -34,16 +34,16 @@ radius = 52.0096
 
 [node name="Character_1" type="CharacterBody2D"]
 collision_layer = 2
-collision_mask = 36
+collision_mask = 44
 script = ExtResource("1_h6wdc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_hhyek")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 42)
+position = Vector2(0, 44.5)
 scale = Vector2(0.599778, 0.343678)
-shape = SubResource("CircleShape2D_iw7wf")
+shape = SubResource("RectangleShape2D_880ig")
 
 [node name="Direction" type="Marker2D" parent="."]
 

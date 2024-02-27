@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://rw4022tw5dyk"]
 
-[ext_resource type="Script" path="res://scripts/game (2).gd" id="1_ammos"]
+[ext_resource type="Script" path="res://scripts/battle.gd" id="1_ammos"]
 [ext_resource type="Script" path="res://scripts/turn_queue.gd" id="1_l861i"]
 [ext_resource type="PackedScene" uid="uid://bjsu0h8ob28x" path="res://scenes/player_actor.tscn" id="1_rmw7m"]
 [ext_resource type="PackedScene" uid="uid://crks0u1dcickr" path="res://scenes/hud.tscn" id="1_x3gjc"]

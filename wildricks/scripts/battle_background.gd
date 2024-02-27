@@ -4,7 +4,7 @@ extends ColorRect
 @onready var player_container := $"HBoxContainer/Player Container"
 @onready var enemy_container := $"HBoxContainer/Enemy Container"
 
-@onready var health_bar := preload('res://battle_system_test/scenes/health_bar.tscn')
+@onready var health_bar := preload('res://scenes/health_bar.tscn')
 
 func init(actors: Array[Node]) -> void:
 	for actor in actors:

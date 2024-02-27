@@ -1,8 +1,8 @@
 class_name GameManager
 extends Node2D
 
-@onready var battle_scene := preload('res://scenes/game (2).tscn')
-@onready var enemy_scene := preload('res://assets/enemy_1.tscn')
+@onready var battle_scene := preload('res://scenes/battle.tscn')
+@onready var enemy_scene := preload('res://scenes/enemy_1.tscn')
 @onready var pause_menu := $"Pause Menu"
 
 func _process(_delta) -> void:

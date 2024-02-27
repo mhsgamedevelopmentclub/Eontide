@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://cpa5856lc8yb7"]
 
-[ext_resource type="Script" path="res://assets/character_1.gd" id="1_h6wdc"]
+[ext_resource type="Script" path="res://scripts/character_1.gd" id="1_h6wdc"]
 [ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="2_hhyek"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iw7wf"]

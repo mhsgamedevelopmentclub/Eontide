@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://cpa5856lc8yb7"]
+[gd_scene load_steps=13 format=3 uid="uid://cpa5856lc8yb7"]
 
 [ext_resource type="Script" path="res://scripts/character_1.gd" id="1_h6wdc"]
-[ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="2_hhyek"]
+[ext_resource type="Texture2D" uid="uid://1w23yp8mlmsb" path="res://assets/OGPC MC Pixel Sprite Sheet.png" id="2_yca4n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_iw7wf"]
 radius = 34.0588
@@ -14,6 +14,20 @@ resource_name = "Backward"
 
 [sub_resource type="Animation" id="Animation_hvwgv"]
 resource_name = "Forward"
+length = 1.4
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 2, 1]
+}
 
 [sub_resource type="Animation" id="Animation_inbq3"]
 resource_name = "Left"
@@ -21,12 +35,45 @@ resource_name = "Left"
 [sub_resource type="Animation" id="Animation_wm5u2"]
 resource_name = "Right"
 
+[sub_resource type="Animation" id="Animation_oveq2"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_mmm5n"]
+resource_name = "Standing"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_4cl6q"]
 _data = {
 "Backward": SubResource("Animation_cqb8v"),
 "Forward": SubResource("Animation_hvwgv"),
 "Left": SubResource("Animation_inbq3"),
-"Right": SubResource("Animation_wm5u2")
+"RESET": SubResource("Animation_oveq2"),
+"Right": SubResource("Animation_wm5u2"),
+"Standing": SubResource("Animation_mmm5n")
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_fa403"]
@@ -38,7 +85,9 @@ collision_mask = 36
 script = ExtResource("1_h6wdc")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_hhyek")
+texture = ExtResource("2_yca4n")
+hframes = 4
+vframes = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-1, 42)
@@ -55,6 +104,11 @@ collision_mask = 16
 shape = SubResource("CircleShape2D_4ucj8")
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
+root_node = NodePath(".")
+libraries = {
+"": SubResource("AnimationLibrary_4cl6q")
+}
+anim_player = NodePath("../AnimationPlayer")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../AnimationTree")

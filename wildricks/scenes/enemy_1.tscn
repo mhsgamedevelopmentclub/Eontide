@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1hm5lxcu0rrm"]
 
 [ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="1_tla0k"]
-[ext_resource type="Script" path="res://assets/enemy_1.gd" id="1_vjxoc"]
+[ext_resource type="Script" path="res://scripts/enemy_1.gd" id="1_vjxoc"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vj3jw"]
 radius = 60.1664

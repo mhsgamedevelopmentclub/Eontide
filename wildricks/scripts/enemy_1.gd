@@ -8,7 +8,7 @@ var player = null
 var collision = false
 
 func _ready() -> void:
-	connect('start_battsle', get_parent().start_battle)
+	connect('start_battle', get_parent().start_battle)
 
 func _physics_process(delta):
 	if player_chase:

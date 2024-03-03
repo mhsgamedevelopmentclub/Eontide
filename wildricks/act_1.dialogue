@@ -1,0 +1,111 @@
+~ act_1
+
+## this still needs to be broken up so that each character has their default dialogue set instead of just it being one long cutscene
+
+## PROLOGUE: THEORIZE
+## (The player wakes up sometime in the evening)
+Aurum: Ah, good evening! I hope you slept well. Must have been a long journey.
+Aurum: I was just about to make dinner. Why don’t you go out and explore a bit, hm?
+Aurum: While you’re out there, would you mind grabbing me some fresh fruit? Strawberries, coconut, and mango, to be precise.
+Aurum: My good friend Evalie runs a fruit stall in the plaza. Here, this should be enough.
+# TODO: make seperate sys window
+Sys: (Aurum gave you 5000 shells!)
+Aurum: You can always let me know if you need anything.
+Aurum: See you!
+# TODO: make this default dialouge for Aurum after this event
+Aurum: I’ll have dinner ready once you return!
+## (Plaza, entering for the first time. Few NPCs on the way to Evalie’s stall).
+# TODO: set this to default Jai dialogue
+Jai: I can’t remember the last time I went outside without getting absolutely soaked…
+Jai: The wrath of the spirits is truly a force to be reckoned with.
+# TODO: set this to default Theo dialogue Theo: Sometimes, I wish I would just drown in the ocean already.
+Theo: Death can’t be worse than eternal grey skies, can it?
+Theo: I suppose that is the power of the spirits, at their worst.
+# TODO: set this to default Hannah dialogue
+Hannah: You can check out any time you like,
+But you can never leave!
+# TODO: set this to default Olivia dialogue
+Olivia: Despite not being a mother yet, I already feel like one.
+Olivia: I can’t tell whether I’m over-worrying or not…
+Olivia: I suppose it’s a blessing no one’s gonna laugh at me. No, more like a curse…  
+# TODO: set this to default Evalie dialogue
+Evalie: Got fruit?
+- Buy Smoothies
+	Evalie: Too late. Blender’s already conked off for the day. Come back tomorrow.
+- Buy Fruit
+	Evalie: Strawberries, mango, and coconut?
+	Evalie: Is Aurum planning to host a potluck again?
+	Evalie: That man, always on his toes, doing things for the all of us…
+	Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
+	# TODO: have sys remove 3420 shells from player
+	# TODO: move to after fruit purchase
+- Nevermind:
+	# TODO: add conversation break
+~ after_fruit_purchase
+## BEGIN CUTSCENE
+Evalie: Thanks. Give Aurum my regards.
+Evalie: …
+Evalie: Oh, I almost forgot!
+Evalie: I think Aurum stole Julian’s rice cooker at our potluck the other day. I’m sure Julian will be the grateful if you nab it for him.
+Evalie: Julian’s right at the end of this road--
+## (Suddenly, some kind of bell starts clanging, interrupting Evalie)
+# TODO: play bell audio, screen shake
+## Shift to Peasprout in middle of square with microphone
+Peasprout: Everyone! Come quickly! Our kids have gone missi--!
+Peasprout: Sarah, why isn’t this microphone working?! Fix it, damn it!
+Sarah: Uh, Mrs. Peasprout--
+# TODO: play microphone glitch audio
+Peasprout: (SUPER LOUD VOICE BYTES)
+Peasprout: Ah, there we go.
+Peasprout: EVERYONE! COME QUICKLY! OUR KIDS HAVE GONE MISSING!
+Peasprout: COME TO THE SQUARE! NOW!
+Evalie: Quick, we must head to the square. Follow me!
+## Show protag, Evalie running in direction of plaza. Fade to Black
+# TODO: move to square_scenario
+~ square_scenario
+Peasprout: A
+Furl: Sinners are sinners, Peasprout.
+Peasprout: Look at what they have done! Do you even think they care about us, at this point?
+Peasprout: But then, Aurum, you haven’t lost any family from these storms, I wouldn’t expect you to understand.
+Aurum: …
+Sarah: Enough!  
+Sarah: Everyone must return to their houses. Sarah: Now. We’ll send search parties in the morning.
+Peasprout: They’re just kids. I… We… We should have done something.
+Theo: What w
+Sarah: Theo…  
+Evalie: That’s enough excitement for today.
+## Evalie walks out of scene
+Peasprout: I might have lost my husband, but I’m not losing my daughter.
+Peasprout: Not now, not ever. Watch me!
+## Peasprout runs out of scene, Fade to black
+Evalie: …
+Evalie: I knew this was going to happen eventually.
+Evalie: Superstitions, superstitions… children are never exempt from change, hm.
+Evalie: Best you head back to Aurum’s.
+## Player walks back to Aurum’s. Everyone has left the path, Fade to black
+Aurum: Welcome back! Admittedly, there isn’t much to see at the moment.
+Aurum: Normally, around this time of the year, all the tropical flowers start blooming. It’s a gorgeous sight. Perhaps they’ll be back next year.
+Aurum: Anyway, here’s dinner. Some ___. Be sure to take a nice bath, lest you want to freeze your gills all night.
+Protag: # TODO: add dialogue here
+Aurum: Ah… yes.
+Aurum: There’s been a bit of a war going on,
+I suppose it’s fair to say, things haven’t been the greatest around here, as of late. Aurum: Sinners everywhere, causing all that jazz with the spirits…
+Aurum: Well, no need to worry about that. Enjoy your vacation!
+## END CUTSCENE
+# TODO: make this default dialouge for Aurum
+Aurum: What’s on your mind?
+- There are Kids… missing?
+	Aurum: Oh, those silly kids? They’re the heart of the town, really.
+	Aurum: Without them, life on this island would be nothing, indeed.
+- Do you get a lot of visitors around here
+	Aurum: Not too many.
+	Aurum: Usually, the only people who come to this island have…
+	Aurum: … well, some kind of important reason for it, you could say.
+	Aurum: Whether that’s an escape or something else.
+- Spirits?
+	Aurum: Don’t worry. There aren’t any spirits in this area.
+- Nevermind
+	# TODO: add conversation break
+
+## ACT I ends when the player goes to sleep.
+## END OF ACT I

@@ -18,10 +18,12 @@ config/icon="res://assets/logo.png"
 [autoload]
 
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
+GameState="*res://scripts/game_state.gd"
 
 [dialogue_manager]
 
 general/balloon_path="res://dialogues/balloon.tscn"
+general/states=["GameState"]
 
 [display]
 
@@ -71,7 +73,7 @@ spawn_enemy={
 
 [internationalization]
 
-locale/translations_pot_files=PackedStringArray("res://dialogues/exampleDialogue.dialogue")
+locale/translations_pot_files=PackedStringArray("res://dialogues/main.dialogue")
 
 [layer_names]
 

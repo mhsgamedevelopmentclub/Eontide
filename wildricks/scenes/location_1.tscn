@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ds8hc4ub10cnh"]
+
+[ext_resource type="Texture2D" uid="uid://dm7js3i7p30s5" path="res://assets/Small bush.png" id="1_sbx3n"]
+[ext_resource type="Script" path="res://scripts/actionable_location_1.gd" id="2_vvlb4"]
+[ext_resource type="Resource" uid="uid://bjkqcfo7ludlt" path="res://dialogues/main.dialogue" id="3_8vkmu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xmggb"]
+size = Vector2(90, 95)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7x2j2"]
+radius = 52.0384
+
+[node name="Location_1" type="CharacterBody2D"]
+collision_layer = 32
+collision_mask = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_sbx3n")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 5.5)
+shape = SubResource("RectangleShape2D_xmggb")
+
+[node name="Actionable" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_vvlb4")
+dialogueResource = ExtResource("3_8vkmu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable"]
+position = Vector2(0, 70)
+shape = SubResource("CircleShape2D_7x2j2")

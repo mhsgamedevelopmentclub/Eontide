@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://d1hm5lxcu0rrm"]
 
-[ext_resource type="Texture2D" uid="uid://cx6w4c5b7edoy" path="res://assets/OGPC MC Front Facing Pixel.png" id="1_tla0k"]
 [ext_resource type="Script" path="res://scripts/enemy_1.gd" id="1_vjxoc"]
+[ext_resource type="Texture2D" uid="uid://bc0gsjth070nt" path="res://assets/Generic enemy pixel sprite.png" id="2_0tud2"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vj3jw"]
 radius = 60.1664
@@ -19,8 +19,7 @@ script = ExtResource("1_vjxoc")
 shape = SubResource("CircleShape2D_vj3jw")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(1, 0, 0, 1)
-texture = ExtResource("1_tla0k")
+texture = ExtResource("2_0tud2")
 
 [node name="Direction" type="Marker2D" parent="."]
 

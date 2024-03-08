@@ -1,9 +1,6 @@
 ~ start
-if has_met_nathan == false:
-	Nathan: Hello
-	set has_met_nathan = true
-else:
-	Nathan: Hello again
+
+Nathan: [[Hi|Hello|Howdy]], this is some dialogue.
 Nathan: Here are some choices.
 - First one
 	Nathan: You picked the first one.
@@ -11,12 +8,6 @@ Nathan: Here are some choices.
 	Nathan: You picked the second one.
 - Start again => start
 - End the conversation => END
-Nathan: For more information see the online documentation. 
-
-=> END
-
-~ pick_apple
-
-Bush: Do you want an apple?
+Nathan: For more information see the online documentation.
 
 => END

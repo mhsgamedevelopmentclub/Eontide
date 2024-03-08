@@ -1,45 +1,81 @@
-~ act_1
+~ Aurum
 
 ## this still needs to be broken up so that each character has their default dialogue set instead of just it being one long cutscene
 
 ## PROLOGUE: THEORIZE
 ## (The player wakes up sometime in the evening)
-Aurum: Ah, good evening! I hope you slept well. Must have been a long journey.
-Aurum: I was just about to make dinner. Why don’t you go out and explore a bit, hm?
-Aurum: While you’re out there, would you mind grabbing me some fresh fruit? Strawberries, coconut, and mango, to be precise.
-Aurum: My good friend Evalie runs a fruit stall in the plaza. Here, this should be enough.
-# TODO: make seperate sys window
-Sys: (Aurum gave you 5000 shells!)
-Aurum: You can always let me know if you need anything.
-Aurum: See you!
+#Introduction Dialogue
+if completed_Aurum_1_1 == false
+	Aurum: Ah, good evening! I hope you slept well. Must have been a long journey.
+	Aurum: I was just about to make dinner. Why don’t you go out and explore a bit, hm?
+	Aurum: While you’re out there, would you mind grabbing me some fresh fruit? Strawberries, coconut, and mango, to be precise.
+	Aurum: My good friend Evalie runs a fruit stall in the plaza. Here, this should be enough.
+	# TODO: make seperate sys window
+	System: (Aurum gave you 5000 shells!)
+	Aurum: You can always let me know if you need anything.
+	Aurum: See you!
+	set completed_Aurum_1_1 = true
+	=> END
+else
 # TODO: make this default dialouge for Aurum after this event
-Aurum: I’ll have dinner ready once you return!
+	Aurum: I’ll have dinner ready once you return!
+	=> END
+
+
+~ Jai
 ## (Plaza, entering for the first time. Few NPCs on the way to Evalie’s stall).
 # TODO: set this to default Jai dialogue
 Jai: I can’t remember the last time I went outside without getting absolutely soaked…
 Jai: The wrath of the spirits is truly a force to be reckoned with.
+=> END
+
+
+~ Theo
 # TODO: set this to default Theo dialogue Theo: Sometimes, I wish I would just drown in the ocean already.
 Theo: Death can’t be worse than eternal grey skies, can it?
 Theo: I suppose that is the power of the spirits, at their worst.
+=> END
+
+~ Hannah
 # TODO: set this to default Hannah dialogue
 Hannah: You can check out any time you like,
 But you can never leave!
+=> END
+
+
+~ Olivia
 # TODO: set this to default Olivia dialogue
 Olivia: Despite not being a mother yet, I already feel like one.
 Olivia: I can’t tell whether I’m over-worrying or not…
 Olivia: I suppose it’s a blessing no one’s gonna laugh at me. No, more like a curse…  
+=> END
+
+
+~ Evalie
 # TODO: set this to default Evalie dialogue
 Evalie: Got fruit?
 - Buy Smoothies
-	Evalie: Too late. Blender’s already conked off for the day. Come back tomorrow.
+	Evalie: Too late. Blender’s already conked off for the day. Come back tomorrow. 
+	=> END
 - Buy Fruit
-	Evalie: Strawberries, mango, and coconut?
-	Evalie: Is Aurum planning to host a potluck again?
-	Evalie: That man, always on his toes, doing things for the all of us…
-	Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
+	if completed_Evalie_1_1 == false
+		if completed_Aurum_1_1 == false
+			Evalie: Please go to Aurum first. 
+			=> END
+		else
+			Evalie: Strawberries, mango, and coconut?
+			Evalie: Is Aurum planning to host a potluck again?
+			Evalie: That man, always on his toes, doing things for the all of us…
+			Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
+			set completed_Evalie_1_1 = true
+			=> END
+	if completed_Evalie_1_1 == true
+		Evalie: Please wait for new script to be added. 
+		=> END
 	# TODO: have sys remove 3420 shells from player
 	# TODO: move to after fruit purchase
-- Nevermind:
+- Nevermind: 
+	=> END
 	# TODO: add conversation break
 ~ after_fruit_purchase
 ## BEGIN CUTSCENE

@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://ds8hc4ub10cnh"]
+[gd_scene load_steps=6 format=3 uid="uid://cplsug8yrcoff"]
 
 [ext_resource type="Texture2D" uid="uid://dm7js3i7p30s5" path="res://assets/Small bush.png" id="1_sbx3n"]
 [ext_resource type="Script" path="res://scripts/actionable_location_1.gd" id="2_vvlb4"]

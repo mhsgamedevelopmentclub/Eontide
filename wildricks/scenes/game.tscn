@@ -1,10 +1,10 @@
 [gd_scene load_steps=8 format=3 uid="uid://ci4ticeim6oru"]
 
-[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_4muek"]
+[ext_resource type="PackedScene" path="res://scenes/character_1.tscn" id="1_4muek"]
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_jdbu1"]
 [ext_resource type="Script" path="res://scripts/Camera.gd" id="2_fffi3"]
-[ext_resource type="PackedScene" uid="uid://djxpsjc8ovgeq" path="res://scenes/character_2.tscn" id="3_hebh0"]
-[ext_resource type="PackedScene" uid="uid://d1hm5lxcu0rrm" path="res://scenes/enemy_1.tscn" id="4_flmdw"]
+[ext_resource type="PackedScene" uid="uid://sfqb8hm1qc8t" path="res://scenes/character_2.tscn" id="3_hebh0"]
+[ext_resource type="PackedScene" path="res://scenes/enemy_1.tscn" id="4_flmdw"]
 [ext_resource type="TileSet" uid="uid://snfrcylq3qgp" path="res://resources/tilemaps/overworld_tileset.tres" id="5_f3cnx"]
 [ext_resource type="PackedScene" uid="uid://c7ebru3o0xkg1" path="res://scenes/pause_menu.tscn" id="6_vmj0u"]
 

@@ -68,16 +68,10 @@ Evalie: Got fruit?
 			Evalie: That man, always on his toes, doing things for the all of us…
 			Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
 			set completed_Evalie_1_1 = true
-			=> END
-	if completed_Evalie_1_1 == true
-		Evalie: Please wait for new script to be added. 
-		=> END
 	# TODO: have sys remove 3420 shells from player
 	# TODO: move to after fruit purchase
-- Nevermind: 
+- Nevermind 
 	=> END
-	# TODO: add conversation break
-~ after_fruit_purchase
 ## BEGIN CUTSCENE
 Evalie: Thanks. Give Aurum my regards.
 Evalie: …
@@ -96,8 +90,11 @@ Peasprout: Ah, there we go.
 Peasprout: EVERYONE! COME QUICKLY! OUR KIDS HAVE GONE MISSING!
 Peasprout: COME TO THE SQUARE! NOW!
 Evalie: Quick, we must head to the square. Follow me!
+set go_to_square = true
 ## Show protag, Evalie running in direction of plaza. Fade to Black
 # TODO: move to square_scenario
+=> END
+
 ~ square_scenario
 Peasprout: A
 Furl: Sinners are sinners, Peasprout.

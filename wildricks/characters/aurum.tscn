@@ -1,0 +1,33 @@
+[gd_scene load_steps=6 format=3 uid="uid://dpkc51tp47a1o"]
+
+[ext_resource type="Texture2D" uid="uid://xebl0nmfycch" path="res://assets/logo.png" id="1_op847"]
+[ext_resource type="Script" path="res://scripts/actionable_aurum.gd" id="2_58qyo"]
+[ext_resource type="Resource" uid="uid://1a35hx02xehe" path="res://dialogues/act_1.dialogue" id="3_n602t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5mpxm"]
+radius = 47.676
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1wcc7"]
+radius = 93.1451
+
+[node name="Aurum" type="CharacterBody2D"]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_5mpxm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.572549, 0.568627, 0.160784, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_op847")
+
+[node name="Actionable_Aurum" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_58qyo")
+dialogueResource = ExtResource("3_n602t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_Aurum"]
+position = Vector2(-1, 36)
+shape = SubResource("CircleShape2D_1wcc7")

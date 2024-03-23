@@ -1,11 +1,6 @@
 extends CanvasLayer
 
-signal transitioned
-# Called when the node enters the scene tree for the first time.
+@onready var anim_player := $AnimationPlayer
 
 func transition():
-	$AnimationPlayer.play("fade_transition")
-	
-func _on_animation_player_animation_finished(anim_name):
-	if anim_name == "fade_transition":
-		emit_signal("transitioned")
+	anim_player.play("fade_transition")

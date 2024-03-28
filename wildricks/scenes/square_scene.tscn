@@ -1,6 +1,11 @@
-[gd_scene format=3 uid="uid://dsykd4xgkan5e"]
+[gd_scene load_steps=2 format=3 uid="uid://dsykd4xgkan5e"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_bsseq"]
 
 [node name="Square" type="Node2D"]
 
 [node name="Environment" type="TileMap" parent="."]
 format = 2
+
+[node name="Character_1" parent="." instance=ExtResource("1_bsseq")]
+position = Vector2(81, 60)

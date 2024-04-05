@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://bswj5q6bk4aeu"]
+
+[ext_resource type="Script" path="res://scripts/item_res.gd" id="1_krll5"]
+
+[resource]
+script = ExtResource("1_krll5")
+name = "Tropical Floral Kombucha"
+description = "A floraly, effervescent drink, with notes of hibiscus and plumeria. If you require your fix and don't have any other options, this stuff tastes better than mouthwash. Heals 10 HP."
+restoration = 10

@@ -1,5 +1,6 @@
-[gd_scene load_steps=6 format=3 uid="uid://c02reylpm0b73"]
+[gd_scene load_steps=7 format=3 uid="uid://c02reylpm0b73"]
 
+[ext_resource type="Script" path="res://scripts/evalie.gd" id="1_m02st"]
 [ext_resource type="Texture2D" uid="uid://xebl0nmfycch" path="res://assets/logo.png" id="1_r6ddr"]
 [ext_resource type="Script" path="res://scripts/actionable_evalie.gd" id="2_njr5y"]
 [ext_resource type="Resource" uid="uid://1a35hx02xehe" path="res://dialogues/act_1.dialogue" id="3_omq6r"]
@@ -13,6 +14,7 @@ radius = 115.317
 [node name="Evalie" type="CharacterBody2D"]
 collision_layer = 8
 collision_mask = 2
+script = ExtResource("1_m02st")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_oduom")

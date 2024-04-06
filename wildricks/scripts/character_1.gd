@@ -6,6 +6,8 @@ extends CharacterBody2D
 @onready var inventory: CanvasLayer = $Inventory
 @onready var animations = $AnimationPlayer
 
+var collision: bool = false
+
 func updateAnimation():
 	var direction = "Forward"
 	if velocity.x < 0: direction = "Left"
@@ -33,3 +35,4 @@ func _unhandled_input(_event) -> void:
 			return
 	if Input.is_action_just_pressed('open_inventory'):
 		inventory.toggle_ui()
+

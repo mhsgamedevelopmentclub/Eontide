@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://06ui3r5ld3ti"]
+
+[ext_resource type="Script" path="res://scripts/item_res.gd" id="1_1dwed"]
+
+[resource]
+script = ExtResource("1_1dwed")
+name = "Elderflower Fizz"
+description = "A fizzy, bubbly drink made of sparkling water and elderflower extract. Contains a tinge of lemon and salt. Drink his once a day to help with motivation and energy. Doing so will also help Evalie stay in business. Heals 100 HP"
+restoration = 100

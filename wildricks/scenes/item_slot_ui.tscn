@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://bf55ij2uyeslr"]
+
+[node name="Item Slot UI" type="ColorRect"]
+custom_minimum_size = Vector2(140, 40)
+offset_right = 40.0
+offset_bottom = 40.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+color = Color(0.592157, 0.592157, 0.592157, 1)
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Item"
+horizontal_alignment = 1
+vertical_alignment = 1
+clip_text = true

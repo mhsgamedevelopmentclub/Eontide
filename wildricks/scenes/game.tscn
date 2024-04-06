@@ -28,7 +28,6 @@ position = Vector2(698, 204)
 position = Vector2(960, 571)
 
 [node name="Enviornment" type="TileMap" parent="."]
-position = Vector2(0, -4)
 tile_set = ExtResource("5_f3cnx")
 format = 2
 layer_0/name = "Ground"

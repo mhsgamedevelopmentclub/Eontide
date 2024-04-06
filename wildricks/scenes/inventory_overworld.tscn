@@ -1,6 +1,12 @@
-[gd_scene format=3 uid="uid://jhfq16vyev1q"]
+[gd_scene load_steps=3 format=3 uid="uid://jhfq16vyev1q"]
+
+[ext_resource type="Script" path="res://scenes/inventory_overworld.gd" id="1_2qmrk"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_om2g3"]
+font_size = 24
 
 [node name="Inventory" type="CanvasLayer"]
+script = ExtResource("1_2qmrk")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 anchors_preset = 15
@@ -8,14 +14,14 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/margin_left = 120
+theme_override_constants/margin_left = 60
 theme_override_constants/margin_top = 60
-theme_override_constants/margin_right = 120
+theme_override_constants/margin_right = 60
 theme_override_constants/margin_bottom = 60
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 40
+theme_override_constants/separation = 60
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
@@ -41,6 +47,14 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 
+[node name="Skill Container" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
 [node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -57,10 +71,63 @@ layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+[node name="Item Container" type="VBoxContainer" parent="MarginContainer/HBoxContainer/HBoxContainer/VBoxContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer"]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Panel" type="Panel" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+[node name="Description Container" type="VBoxContainer" parent="MarginContainer/HBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item Name" type="Label" parent="MarginContainer/HBoxContainer/Panel/Description Container"]
 layout_mode = 2
 size_flags_vertical = 3
+text = "ITEM"
+label_settings = SubResource("LabelSettings_om2g3")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Background" type="TextureRect" parent="MarginContainer/HBoxContainer/Panel/Description Container"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="CenterContainer" type="CenterContainer" parent="MarginContainer/HBoxContainer/Panel/Description Container/Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Item Sprite" type="TextureRect" parent="MarginContainer/HBoxContainer/Panel/Description Container/Background/CenterContainer"]
+custom_minimum_size = Vector2(90, 90)
+layout_mode = 2
+expand_mode = 4
+stretch_mode = 5
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/HBoxContainer/Panel/Description Container"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 4.0
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Item Description" type="Label" parent="MarginContainer/HBoxContainer/Panel/Description Container/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Bla bla bla"

@@ -3,7 +3,7 @@ extends CharacterBody2D
 @export var moveSpeed: float = 10000
 
 @onready var actionableFinder: Area2D = $Direction/ActionableFinder
-
+@onready var inventory: CanvasLayer = $Inventory
 @onready var animations = $AnimationPlayer
 
 func updateAnimation():
@@ -31,3 +31,5 @@ func _unhandled_input(_event) -> void:
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+	if Input.is_action_just_pressed('open_inventory'):
+		inventory.toggle_ui()

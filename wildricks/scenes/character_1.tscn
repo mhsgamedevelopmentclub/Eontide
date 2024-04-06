@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cpa5856lc8yb7"]
+[gd_scene load_steps=14 format=3 uid="uid://cpa5856lc8yb7"]
 
 [ext_resource type="Script" path="res://scripts/character_1.gd" id="1_h6wdc"]
 [ext_resource type="Texture2D" uid="uid://1w23yp8mlmsb" path="res://assets/OGPC MC Pixel Sprite Sheet.png" id="2_yca4n"]
+[ext_resource type="PackedScene" uid="uid://jhfq16vyev1q" path="res://scenes/inventory_overworld.tscn" id="3_20x4w"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_880ig"]
 size = Vector2(66.6913, 37.8261)
@@ -159,3 +160,6 @@ libraries = {
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CollisionDetector"]
 shape = SubResource("CircleShape2D_fa403")
+
+[node name="Inventory" parent="." instance=ExtResource("3_20x4w")]
+visible = false

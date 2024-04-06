@@ -1,15 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://dsykd4xgkan5e"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_bsseq"]
+[ext_resource type="Script" path="res://scripts/square_scene.gd" id="1_gm1bf"]
 [ext_resource type="Script" path="res://scripts/TownCenter_Actionable.gd" id="2_ifq1p"]
 [ext_resource type="Resource" uid="uid://1a35hx02xehe" path="res://dialogues/act_1.dialogue" id="3_qyg6y"]
-[ext_resource type="PackedScene" uid="uid://dpkc51tp47a1o" path="res://characters/aurum.tscn" id="4_g5whu"]
 [ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="5_pso51"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_qd8xy"]
 radius = 58.5491
 
 [node name="Square" type="Node2D"]
+script = ExtResource("1_gm1bf")
 
 [node name="Environment" type="TileMap" parent="."]
 format = 2
@@ -26,9 +27,6 @@ dialogueResource = ExtResource("3_qyg6y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TownCenter_Actionable"]
 shape = SubResource("CircleShape2D_qd8xy")
-
-[node name="Aurum" parent="." instance=ExtResource("4_g5whu")]
-position = Vector2(997, 248)
 
 [node name="Evalie" parent="." instance=ExtResource("5_pso51")]
 position = Vector2(183, 426)

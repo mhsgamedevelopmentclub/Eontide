@@ -6,6 +6,8 @@ extends CharacterBody2D
 
 @onready var animations = $AnimationPlayer
 
+var collision: bool = false
+
 func updateAnimation():
 	var direction = "Forward"
 	if velocity.x < 0: direction = "Left"
@@ -31,3 +33,4 @@ func _unhandled_input(_event) -> void:
 		if actionables.size() > 0:
 			actionables[0].action()
 			return
+

@@ -5,7 +5,7 @@
 ## PROLOGUE: THEORIZE
 ## (The player wakes up sometime in the evening)
 #Introduction Dialogue
-if at_square == false:
+if listen_to_peasprout == false:
 	if completed_Aurum_1_1 == false
 		Aurum: Ah, good evening! I hope you slept well. Must have been a long journey.
 		Aurum: I was just about to make dinner. Why don’t you go out and explore a bit, hm?
@@ -21,6 +21,16 @@ if at_square == false:
 	# TODO: make this default dialouge for Aurum after this event
 		Aurum: I’ll have dinner ready once you return!
 		=> END
+else if listen_to_peasprout == true:
+	Aurum: Welcome back! Admittedly, there isn’t much to see at the moment.
+	Aurum: Normally, around this time of the year, all the tropical flowers start blooming. It’s a gorgeous sight. Perhaps they’ll be back next year.
+	Aurum: Anyway, here’s dinner. Some ___. Be sure to take a nice bath, lest you want to freeze your gills all night.
+	Protag: # TODO: add dialogue here
+	Aurum: Ah… yes.
+	Aurum: There’s been a bit of a war going on, I suppose it’s fair to say, things haven’t been the greatest around here, as of late. 
+	Aurum: Sinners everywhere, making all that jazz with the spirits…
+	Aurum: Well, no need to worry about that. Enjoy your vacation!
+	set listen_to_peasprout = false
 else:
 # TODO: make this default dialouge for Aurum
 	Aurum: What’s on your mind?
@@ -78,6 +88,8 @@ if listen_to_peasprout == true:
 	Evalie: I knew this was going to happen eventually.
 	Evalie: Superstitions, superstitions… children are never exempt from change, hm.
 	Evalie: Best you head back to Aurum’s.
+	set go_to_town = true
+	set evalie_go_home = true
 	=> END
 	## Player walks back to Aurum’s. Everyone has left the path, Fade to black
 # TODO: set this to default Evalie dialogue
@@ -92,15 +104,15 @@ else:
 				Evalie: Please go to Aurum first. 
 				=> END
 			else:
-				if at_square == false:
-					Evalie: Strawberries, mango, and coconut?
-					Evalie: Is Aurum planning to host a potluck again?
-					Evalie: That man, always on his toes, doing things for the all of us…
-					Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
-					set completed_Evalie_1_1 = true
-				else:
-					Evalie: Check in later for new updates
-					=> END
+				Evalie: Strawberries, mango, and coconut?
+				Evalie: Is Aurum planning to host a potluck again?
+				Evalie: That man, always on his toes, doing things for the all of us…
+				Evalie: Anyway, that will be 3420 shells. Half price, since you’re with Aurum.
+				set completed_Evalie_1_1 = true
+		else: 
+			if at_square == true:
+				Evalie: Please wait for new updates.
+				=> END
 		# TODO: have sys remove 3420 shells from player
 		# TODO: move to after fruit purchase
 	- Nevermind 
@@ -120,7 +132,7 @@ Peasprout: Everyone! Come quickly! Our kids have gone missi--!
 Peasprout: Sarah, why isn’t this microphone working?! Fix it, damn it!
 Sarah: Uh, Mrs. Peasprout--
 # TODO: play microphone glitch audio
-Peasprout: (SUPER LOUD VOICE BYTES)
+To Jaiden: (SUPER LOUD VOICE BYTES)
 Peasprout: Ah, there we go.
 Peasprout: EVERYONE! COME QUICKLY! OUR KIDS HAVE GONE MISSING!
 Peasprout: COME TO THE SQUARE! NOW!
@@ -151,18 +163,6 @@ set listen_to_peasprout = true
 ## Peasprout runs out of scene, Fade to black
 => END
 
-~ Aurum_2
-Aurum: Welcome back! Admittedly, there isn’t much to see at the moment.
-Aurum: Normally, around this time of the year, all the tropical flowers start blooming. It’s a gorgeous sight. Perhaps they’ll be back next year.
-Aurum: Anyway, here’s dinner. Some ___. Be sure to take a nice bath, lest you want to freeze your gills all night.
-Protag: # TODO: add dialogue here
-Aurum: Ah… yes.
-Aurum: There’s been a bit of a war going on, I suppose it’s fair to say, things haven’t been the greatest around here, as of late. 
-Aurum: Sinners everywhere, making all that jazz with the spirits…
-Aurum: Well, no need to worry about that. Enjoy your vacation!
-
-## END CUTSCENE
-=> END
 
 ## ACT I ends when the player goes to sleep.
 ## END OF ACT I

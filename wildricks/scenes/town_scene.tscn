@@ -1,8 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://hu256vk0kwup"]
+[gd_scene load_steps=4 format=3 uid="uid://hu256vk0kwup"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_cydln"]
 [ext_resource type="Script" path="res://scripts/town_scene.gd" id="1_xf7w6"]
-[ext_resource type="PackedScene" uid="uid://dpkc51tp47a1o" path="res://characters/aurum.tscn" id="2_shwu8"]
 [ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="3_qdcvj"]
 
 [node name="Town" type="Node2D"]
@@ -14,9 +13,6 @@ format = 2
 [node name="Character_1" parent="." instance=ExtResource("1_cydln")]
 
 [node name="Camera" type="Camera2D" parent="Character_1"]
-
-[node name="Aurum" parent="." instance=ExtResource("2_shwu8")]
-position = Vector2(464, -25)
 
 [node name="Evalie" parent="." instance=ExtResource("3_qdcvj")]
 position = Vector2(216, 329)

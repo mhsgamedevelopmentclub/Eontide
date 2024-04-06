@@ -1,0 +1,27 @@
+[gd_scene load_steps=6 format=3 uid="uid://co1fupfpau5m8"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_5yo4x"]
+[ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_jcw4k"]
+[ext_resource type="PackedScene" uid="uid://dpkc51tp47a1o" path="res://characters/aurum.tscn" id="2_6y157"]
+[ext_resource type="Script" path="res://scripts/Transportation_Home_Town.gd" id="3_66dj3"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_abxki"]
+radius = 45.5412
+
+[node name="Home" type="Node2D"]
+script = ExtResource("1_jcw4k")
+
+[node name="Character_1" parent="." instance=ExtResource("1_5yo4x")]
+position = Vector2(146, 92)
+
+[node name="Aurum" parent="." instance=ExtResource("2_6y157")]
+position = Vector2(520, 50)
+
+[node name="Transportation_Home_Town" type="Area2D" parent="."]
+position = Vector2(400, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("3_66dj3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Home_Town"]
+shape = SubResource("CircleShape2D_abxki")

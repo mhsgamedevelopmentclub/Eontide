@@ -4,4 +4,3 @@
 
 [node name="EnemyActor" type="Node2D"]
 script = ExtResource("1_u3oni")
-max_health = 30

@@ -1,5 +1,7 @@
 class_name ATBBar
-extends HBoxContainer 
+extends HBoxContainer
+## Manages the UI of the Active-Time Battle system time gauge,
+## emitting various signals during it's lifetime
 
 var progress_bar: ProgressBar
 var timer: Timer

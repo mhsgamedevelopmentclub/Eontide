@@ -12,8 +12,8 @@ func _ready() -> void:
 	var enemies: Array[EnemyActor] = []
 	enemies.assign(turn_queue.enemies.get_children())
 	# its kinda weird how heros+enemies as Array[Actor] is
-	# considered type-safe, might have to check with a debugger
-	# if time allots
+	# considered type-safe, might have to check with a
+	# debugger later
 	for actor in (heros+enemies as Array[Actor]):
 		actor.connect('death', _finish)
 	hud.init(heros, enemies)

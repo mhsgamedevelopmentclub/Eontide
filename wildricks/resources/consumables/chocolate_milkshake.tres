@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Consumable" load_steps=2 format=3 uid="uid://dedf83u880dxr"]
+
+[ext_resource type="Script" path="res://scripts/custom_resources/consumable_res.gd" id="1_kw5rx"]
+
+[resource]
+script = ExtResource("1_kw5rx")
+restoration = 25
+name = "Chocolate Milkshake"
+description = "A sugary, chocolaty, milkshake made with frozen cream, milk, and chocolate sauce. You're tempted to spill it all over the floor and roll in it like a pig. Heals 25 HP."

@@ -1,9 +1,0 @@
-[gd_resource type="Resource" script_class="Item" load_steps=2 format=3 uid="uid://cebibtn0miqx0"]
-
-[ext_resource type="Script" path="res://scripts/item_res.gd" id="1_j7qmm"]
-
-[resource]
-script = ExtResource("1_j7qmm")
-name = "Black Coffee"
-description = "Black coffee with no cream or sugar. Bitter, just like your personality. Heals 50 HP."
-restoration = 50

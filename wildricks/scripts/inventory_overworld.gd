@@ -8,16 +8,16 @@ extends CanvasLayer
 	'text': $'MarginContainer/HBoxContainer/Panel/Description Container/MarginContainer/Item Description'
 }
 
-@export var items: Array[Item]
-#@export var skills: Array[Skill] # uncomment when branch 'refactor' is merged
+@export var consumables: Array[Consumable]
+@export var skills: Array[Skill]
 
 var selected_item: Item
 
 func add_item(item: Item) -> void:
-	#if item is Skill:
-		#pass
-	#else:
-	items.append(item)
+	if item is Skill:
+		skills.append(item)
+	else:
+		consumables.append(item)
 
 func toggle_ui() -> void:
 	if visible:

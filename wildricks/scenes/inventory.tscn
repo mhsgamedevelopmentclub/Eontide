@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://bydfq2apgvxox"]
+[gd_scene load_steps=4 format=3 uid="uid://bydfq2apgvxox"]
 
 [ext_resource type="Script" path="res://scripts/battle_system/inventory.gd" id="1_g750g"]
-[ext_resource type="PackedScene" uid="uid://dy8refbhl55a1" path="res://scenes/battle_system/skill_slot_container.tscn" id="1_rc6hc"]
+[ext_resource type="PackedScene" uid="uid://bsnn3agkf1sp0" path="res://scenes/ui_components/draggable_container.tscn" id="2_ekiq0"]
+[ext_resource type="PackedScene" uid="uid://bf55ij2uyeslr" path="res://scenes/ui_components/draggable.tscn" id="3_2qijh"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -49,5 +50,13 @@ layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.286275, 0.286275, 0.286275, 1)
 
-[node name="Skill Slot Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("1_rc6hc")]
-layout_mode = 1
+[node name="Draggable Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("2_ekiq0")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Draggable" parent="Background/MarginContainer/VBoxContainer/ColorRect/Draggable Container" instance=ExtResource("3_2qijh")]
+layout_mode = 2

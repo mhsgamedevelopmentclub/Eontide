@@ -1,17 +1,22 @@
 class_name DraggableContainer
 extends VBoxContainer
 
-signal slot_changed
-
-var groups: Array[StringName]
+signal slot_changed(draggable)
+@onready var draggable_tscn: PackedScene = preload('res://scenes/ui_components/draggable.tscn')
 
 func _ready() -> void:
-	# TODO: figure out how to differentiate between
-	# consumables and skills
-	groups = get_groups()
-	groups.sort()
-	for container in get_tree().get_nodes_in_group(groups[0]):
+	for container in get_tree().get_nodes_in_group('drag_container'):
 		container.connect('slot_changed', _on_data_dropped)
 
-func _on_data_dropped() -> void:
-	pass
+func _can_drop_data(_at_position: Vector2, data: Variant) -> bool:
+	return data is Node and data.is_in_group('draggable')
+
+func _drop_data(_at_position: Vector2, data: Variant):
+	var draggable: Draggable = data as Draggable
+	emit_signal('slot_changed', draggable)
+	add_child(draggable.duplicate())
+
+func _on_data_dropped(dropped_draggable: Draggable) -> void:
+	if dropped_draggable in get_children():
+		remove_child(dropped_draggable)
+		dropped_draggable.queue_free()

@@ -1,14 +1,15 @@
 class_name Inventory
 extends Control
 
-@onready var container: BoxContainer = (
-	$'Background/MarginContainer/VBoxContainer/ColorRect/Skill Slot Container'
-	as BoxContainer)
-@onready var skill_ui: PackedScene = preload('res://scenes/battle_system/skill_slot_ui.tscn')
+@onready var container: DraggableContainer = (
+	$'Background/MarginContainer/VBoxContainer/ColorRect/Draggable Container'
+	as DraggableContainer)
+@onready var draggable_tscn: PackedScene = preload('res://scenes/ui_components/draggable.tscn')
 
 func init(player: PlayerActor) -> void:
 	var inventory: Array[Skill] = player.inventory
 	for skill in inventory:
-		var new_skill: SkillSlot = skill_ui.instantiate() as SkillSlot
-		new_skill.init(skill)
-		container.add_child(new_skill)
+		var new_draggable: Draggable = draggable_tscn.instantiate() as Draggable
+		new_draggable.item = skill
+		new_draggable.init()
+		container.add_child(new_draggable)

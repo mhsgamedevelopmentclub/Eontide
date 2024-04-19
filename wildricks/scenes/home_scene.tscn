@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://co1fupfpau5m8"]
+[gd_scene load_steps=6 format=3 uid="uid://dwbqxysxmx8eb"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_5yo4x"]
 [ext_resource type="Script" path="res://scripts/home_scene.gd" id="1_jcw4k"]
@@ -25,3 +25,6 @@ script = ExtResource("3_66dj3")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Home_Town"]
 shape = SubResource("CircleShape2D_abxki")
+
+[connection signal="body_entered" from="Transportation_Home_Town" to="Transportation_Home_Town" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Home_Town" to="Transportation_Home_Town" method="_on_body_exited"]

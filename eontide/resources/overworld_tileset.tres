@@ -1,0 +1,23 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://badpsbv55xjd0"]
+
+[ext_resource type="Texture2D" uid="uid://cwjbu6k7x4pkj" path="res://assets/overworld.png" id="1_mydsf"]
+[ext_resource type="Texture2D" uid="uid://ciwriid0k0erm" path="res://assets/Small bush.png" id="2_ehnwl"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc182"]
+texture = ExtResource("1_mydsf")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdxd3"]
+texture = ExtResource("2_ehnwl")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[resource]
+tile_size = Vector2i(128, 128)
+sources/0 = SubResource("TileSetAtlasSource_fc182")
+sources/1 = SubResource("TileSetAtlasSource_fdxd3")

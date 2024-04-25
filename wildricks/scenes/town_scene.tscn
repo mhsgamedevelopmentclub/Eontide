@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="3_qdcvj"]
 [ext_resource type="Script" path="res://scripts/Transportation_Town_Home.gd" id="4_xes3w"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wnxwr"]
-radius = 64.4981
+[sub_resource type="CircleShape2D" id="CircleShape2D_t7is3"]
+radius = 68.3593
 
 [node name="Town" type="Node2D"]
 script = ExtResource("1_xf7w6")
@@ -22,11 +22,13 @@ format = 2
 position = Vector2(216, 329)
 
 [node name="Transportation_Town_Home" type="Area2D" parent="."]
-position = Vector2(400, 500)
+collision_layer = 64
+collision_mask = 2
 script = ExtResource("4_xes3w")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Town_Home"]
-shape = SubResource("CircleShape2D_wnxwr")
+position = Vector2(300, 100)
+shape = SubResource("CircleShape2D_t7is3")
 
 [connection signal="body_entered" from="Transportation_Town_Home" to="Transportation_Town_Home" method="_on_body_entered"]
 [connection signal="body_exited" from="Transportation_Town_Home" to="Transportation_Town_Home" method="_on_body_exited"]

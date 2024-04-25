@@ -13,3 +13,9 @@ func _process(delta):
 			get_tree().change_scene_to_file("res://scenes/town_scene.tscn")
 
 
+func _on_body_entered(body):
+	if body is CharacterBody2D:
+		player_entered = true
+
+func _on_body_exited(body):
+	player_entered = false

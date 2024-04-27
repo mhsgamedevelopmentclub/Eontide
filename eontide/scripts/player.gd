@@ -1,8 +1,6 @@
 class_name Player
 extends Entity
 
-@onready var anim_sprite: AnimatedSprite2D = $Sprite2D as AnimatedSprite2D
-
 func _process(_delta: float) -> void:
 	direction = Input.get_vector(
 		'move_left', 'move_right', 'move_up','move_down')

@@ -1,0 +1,14 @@
+[gd_resource type="SpriteFrames" load_steps=2 format=3 uid="uid://dh55un7roer7l"]
+
+[ext_resource type="Texture2D" uid="uid://7hcj8hqufq7y" path="res://assets/Generic enemy pixel sprite.png" id="1_88gro"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_88gro")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]

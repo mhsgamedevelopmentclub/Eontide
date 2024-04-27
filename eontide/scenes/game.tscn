@@ -1,12 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://cffamuqb4w6ij"]
+[gd_scene load_steps=4 format=3 uid="uid://cffamuqb4w6ij"]
 
+[ext_resource type="Material" uid="uid://dtbavw6rvpvdp" path="res://resources/rain_shader_material.tres" id="1_77c0w"]
 [ext_resource type="TileSet" uid="uid://badpsbv55xjd0" path="res://resources/overworld_tileset.tres" id="1_xjrh0"]
 [ext_resource type="PackedScene" uid="uid://diwnfv1g8qda3" path="res://scenes/player.tscn" id="2_1mt67"]
 
 [node name="Game" type="Node2D"]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Rain" type="ColorRect" parent="CanvasLayer"]
+visible = false
+material = ExtResource("1_77c0w")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+color = Color(1, 1, 1, 0)
+metadata/_edit_use_anchors_ = true
+
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-color = Color(0.7, 0.7, 0.7, 1)
+color = Color(0.5, 0.5, 0.5, 1)
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource("1_xjrh0")
@@ -16,6 +32,5 @@ layer_0/tile_data = PackedInt32Array(0, 131072, 0, 65536, 131072, 0, 131072, 131
 layer_1/name = "grass"
 layer_1/tile_data = PackedInt32Array(-131071, 196608, 0, 65540, 196608, 0, -131066, 196608, 0, 131070, 196608, 0, -196611, 196608, 0, -262139, 196608, 0, 196608, 196608, 0, 262150, 196608, 0, 131080, 262144, 0, 327676, 262144, 0, -65538, 262144, 0, 2, 262144, 0, 6, 1, 0, -262144, 1, 0, 262142, 1, 0, 196611, 1, 0)
 
-[node name="Player" parent="." node_paths=PackedStringArray("tilemap") instance=ExtResource("2_1mt67")]
+[node name="Player" parent="." instance=ExtResource("2_1mt67")]
 position = Vector2(128, 0)
-tilemap = NodePath("../TileMap")

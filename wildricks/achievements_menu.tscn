@@ -1,0 +1,66 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvy5or6g55rxg"]
+
+[ext_resource type="Texture2D" uid="uid://b8lflffup2lu5" path="res://assets/aurem front facing pixel.png" id="1_71wcp"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1150.0
+offset_bottom = 645.0
+color = Color(0.407843, 0.588235, 0.556863, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 0
+offset_left = -1.0
+offset_top = 40.0
+offset_right = 1151.0
+offset_bottom = 95.0
+rotation = -0.000598059
+alignment = 1
+
+[node name="Label" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "Achievements"
+
+[node name="GridContainer" type="GridContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -200.0
+offset_right = 500.0
+offset_bottom = 250.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -0.0125538
+theme_override_constants/h_separation = 50
+columns = 3
+
+[node name="Panel" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_71wcp")
+
+[node name="Panel2" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2
+
+[node name="Panel3" type="Panel" parent="GridContainer"]
+custom_minimum_size = Vector2(300, 300)
+layout_mode = 2

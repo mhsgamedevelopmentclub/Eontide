@@ -20,3 +20,5 @@ enum STORY_FLAGS {
 }
 
 var cur_flag: STORY_FLAGS = STORY_FLAGS.PROLOGUE
+
+

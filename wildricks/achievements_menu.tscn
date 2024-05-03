@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dvy5or6g55rxg"]
+[gd_scene load_steps=3 format=3 uid="uid://dvy5or6g55rxg"]
 
-[ext_resource type="Texture2D" uid="uid://b8lflffup2lu5" path="res://assets/aurem front facing pixel.png" id="1_71wcp"]
+[ext_resource type="Script" path="res://scripts/achievements_menu.gd" id="1_ynj8r"]
+[ext_resource type="PackedScene" uid="uid://c1ta8xdwcgbug" path="res://QuestDetails.tscn" id="2_kacon"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_ynj8r")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -47,20 +49,47 @@ rotation = -0.0125538
 theme_override_constants/h_separation = 50
 columns = 3
 
-[node name="Panel" type="Panel" parent="GridContainer"]
+[node name="Quest1" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
 
-[node name="TextureRect" type="TextureRect" parent="GridContainer/Panel"]
+[node name="TextureRect" type="TextureRect" parent="GridContainer/Quest1"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-texture = ExtResource("1_71wcp")
+offset_left = 36.9498
+offset_top = 38.9997
+offset_right = 258.95
+offset_bottom = 261.0
 
-[node name="Panel2" type="Panel" parent="GridContainer"]
+[node name="Label" type="Label" parent="GridContainer/Quest1"]
+layout_mode = 0
+offset_right = 200.0
+offset_bottom = 23.0
+scale = Vector2(1.5, 1.5)
+text = "The Woes of Aurum"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="GridContainer/Quest1"]
+layout_mode = 0
+offset_left = 106.652
+offset_top = 267.36
+offset_right = 208.652
+offset_bottom = 300.36
+text = "Details"
+
+[node name="Quest2" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/Quest2"]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 8.0
 
 [node name="Panel3" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+
+[node name="QuestDetails" parent="GridContainer" instance=ExtResource("2_kacon")]
+visible = false
+
+[connection signal="pressed" from="GridContainer/Quest1/Button" to="." method="_on_button_pressed"]

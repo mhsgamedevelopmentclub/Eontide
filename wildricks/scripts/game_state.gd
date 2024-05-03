@@ -11,3 +11,8 @@ var listen_to_peasprout: bool = false
 var go_to_town: bool = false
 
 var evalie_go_home: bool = false
+
+#Quests
+
+var quest1_started: bool = false
+var quest1_complete: bool = false

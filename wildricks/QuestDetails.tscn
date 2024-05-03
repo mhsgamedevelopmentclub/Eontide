@@ -1,0 +1,20 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1ta8xdwcgbug"]
+
+[ext_resource type="Script" path="res://scripts/QuestDetails.gd" id="1_5rmrv"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_5rmrv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.466667)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 95.0
+offset_top = 97.0
+offset_right = 1059.0
+offset_bottom = 545.0

@@ -18,3 +18,10 @@ offset_left = 95.0
 offset_top = 97.0
 offset_right = 1059.0
 offset_bottom = 545.0
+
+[node name="Exit" type="Button" parent="."]
+offset_left = 447.0
+offset_top = 594.0
+offset_right = 719.0
+offset_bottom = 641.0
+text = "Exit"

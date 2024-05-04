@@ -78,6 +78,13 @@ size_flags_horizontal = 4
 size_flags_vertical = 6
 text = "Credits"
 
+[node name="Achievements" type="Button" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+text = "Achievements"
+
 [node name="HSeparator2" type="Control" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3

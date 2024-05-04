@@ -82,14 +82,40 @@ layout_mode = 2
 
 [node name="Button" type="Button" parent="GridContainer/Quest2"]
 layout_mode = 0
-offset_right = 8.0
-offset_bottom = 8.0
+offset_left = 107.712
+offset_top = 264.767
+offset_right = 209.712
+offset_bottom = 297.767
+text = "Details"
 
-[node name="Panel3" type="Panel" parent="GridContainer"]
+[node name="Quest3" type="Panel" parent="GridContainer"]
 custom_minimum_size = Vector2(300, 300)
 layout_mode = 2
+
+[node name="Button" type="Button" parent="GridContainer/Quest3"]
+layout_mode = 0
+offset_left = 104.76
+offset_top = 263.123
+offset_right = 206.76
+offset_bottom = 296.123
+text = "Details"
 
 [node name="QuestDetails" parent="GridContainer" instance=ExtResource("2_kacon")]
 visible = false
 
-[connection signal="pressed" from="GridContainer/Quest1/Button" to="." method="_on_button_pressed"]
+[node name="Exit" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -126.0
+offset_top = -32.0
+offset_right = 129.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Exit"
+
+[connection signal="pressed" from="Exit" to="." method="_on_exit_pressed"]

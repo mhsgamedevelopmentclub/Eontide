@@ -16,3 +16,5 @@ var evalie_go_home: bool = false
 
 var quest1_started: bool = false
 var quest1_complete: bool = false
+
+var main_character_name: String = "MC"

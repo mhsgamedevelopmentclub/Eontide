@@ -1,18 +1,20 @@
 [gd_scene load_steps=4 format=3 uid="uid://diwnfv1g8qda3"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1js83"]
-[ext_resource type="SpriteFrames" uid="uid://d1r0khitfu2aw" path="res://resources/player_entity_anim.tres" id="2_3h3ck"]
+[ext_resource type="SpriteFrames" uid="uid://d1r0khitfu2aw" path="res://resources/animations/player_entity_anim.tres" id="2_3h3ck"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hi1oy"]
-size = Vector2(74, 104)
+size = Vector2(150, 200)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_sprite")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("animated_sprite")]
 motion_mode = 1
 wall_min_slide_angle = 0.0
 script = ExtResource("1_1js83")
-anim_sprite = NodePath("Sprite2D")
+animated_sprite = NodePath("Sprite2D")
+movement_speed = 512.0
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_3h3ck")
 animation = &"move_down"
 
@@ -20,3 +22,4 @@ animation = &"move_down"
 shape = SubResource("RectangleShape2D_hi1oy")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.5, 0.5)

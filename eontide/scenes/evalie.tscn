@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://cuutns04h1p3v"]
+
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_r3be6"]
+[ext_resource type="SpriteFrames" uid="uid://de4873d3cmrb8" path="res://resources/animations/evalie_entity_anim.tres" id="2_o0ag5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkujv"]
+size = Vector2(100, 185)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylpay"]
+radius = 250.0
+
+[node name="Evalie" type="CharacterBody2D" node_paths=PackedStringArray("interaction_range", "animated_sprite")]
+script = ExtResource("1_r3be6")
+npc_name = "Evalie"
+interaction_range = NodePath("Interaction Range")
+animated_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("2_o0ag5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rkujv")
+
+[node name="Interaction Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Range"]
+shape = SubResource("CircleShape2D_ylpay")

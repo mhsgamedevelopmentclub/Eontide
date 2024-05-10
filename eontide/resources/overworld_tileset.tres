@@ -1,23 +1,50 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://badpsbv55xjd0"]
+[gd_resource type="TileSet" load_steps=7 format=3 uid="uid://du7vmnqbnutvx"]
 
-[ext_resource type="Texture2D" uid="uid://cwjbu6k7x4pkj" path="res://assets/overworld.png" id="1_mydsf"]
-[ext_resource type="Texture2D" uid="uid://ciwriid0k0erm" path="res://assets/Small bush.png" id="2_ehnwl"]
+[ext_resource type="Texture2D" uid="uid://cwjbu6k7x4pkj" path="res://assets/overworld.png" id="1_sxthb"]
+[ext_resource type="Texture2D" uid="uid://batisd70m8f6s" path="res://assets/AxulArt's_BasicPlains-Tileset_ver.2_by_AxulArt/spritesheet.png" id="1_tnvjd"]
+[ext_resource type="Texture2D" uid="uid://ciwriid0k0erm" path="res://assets/Small bush.png" id="2_8qhfa"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fc182"]
-texture = ExtResource("1_mydsf")
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_je8to"]
+texture = ExtResource("1_sxthb")
+texture_region_size = Vector2i(128, 128)
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwdqv"]
+texture = ExtResource("2_8qhfa")
+texture_region_size = Vector2i(128, 128)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_seakv"]
+texture = ExtResource("1_tnvjd")
 texture_region_size = Vector2i(128, 128)
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
 4:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fdxd3"]
-texture = ExtResource("2_ehnwl")
-texture_region_size = Vector2i(128, 128)
-0:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
 
 [resource]
 tile_size = Vector2i(128, 128)
-sources/0 = SubResource("TileSetAtlasSource_fc182")
-sources/1 = SubResource("TileSetAtlasSource_fdxd3")
+sources/2 = SubResource("TileSetAtlasSource_seakv")
+sources/0 = SubResource("TileSetAtlasSource_je8to")
+sources/1 = SubResource("TileSetAtlasSource_uwdqv")

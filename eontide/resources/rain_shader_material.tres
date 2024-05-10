@@ -5,10 +5,10 @@
 [resource]
 shader = ExtResource("1_urpas")
 shader_parameter/rain_amount = 200.0
-shader_parameter/near_rain_length = 0.2
-shader_parameter/far_rain_length = 0.1
-shader_parameter/near_rain_width = 1.0
-shader_parameter/far_rain_width = 0.5
+shader_parameter/near_rain_length = 0.1
+shader_parameter/far_rain_length = 0.2
+shader_parameter/near_rain_width = 0.5
+shader_parameter/far_rain_width = 1.0
 shader_parameter/near_rain_transparency = 1.0
 shader_parameter/far_rain_transparency = 0.5
 shader_parameter/rain_color = Color(0.6, 0.6, 0.6, 1)

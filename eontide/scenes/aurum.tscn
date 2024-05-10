@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://c0sjjf7i5sdi5"]
+
+[ext_resource type="SpriteFrames" uid="uid://cgc3svu35k1jc" path="res://resources/animations/aurum_entity_anim.tres" id="1_a67o1"]
+[ext_resource type="Script" path="res://scripts/npc.gd" id="1_c7o6j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rkujv"]
+size = Vector2(100, 180)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylpay"]
+radius = 250.0
+
+[node name="Aurum" type="CharacterBody2D" node_paths=PackedStringArray("interaction_range", "animated_sprite")]
+script = ExtResource("1_c7o6j")
+npc_name = "Aurum"
+interaction_range = NodePath("Interaction Range")
+animated_sprite = NodePath("Sprite2D")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_a67o1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rkujv")
+
+[node name="Interaction Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Range"]
+shape = SubResource("CircleShape2D_ylpay")

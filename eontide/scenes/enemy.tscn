@@ -1,16 +1,30 @@
-[gd_scene load_steps=4 format=3 uid="uid://cw144abcsc5l1"]
+[gd_scene load_steps=5 format=3 uid="uid://cw144abcsc5l1"]
 
-[ext_resource type="Script" path="res://scripts/entity.gd" id="1_2jclc"]
-[ext_resource type="SpriteFrames" uid="uid://dh55un7roer7l" path="res://resources/enemy_entity_anim.tres" id="2_q22gl"]
+[ext_resource type="Script" path="res://scripts/enemy.gd" id="1_k6deg"]
+[ext_resource type="SpriteFrames" uid="uid://dh55un7roer7l" path="res://resources/animations/enemy_entity_anim.tres" id="2_q22gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn0bv"]
-size = Vector2(100, 75)
+size = Vector2(200, 150)
 
-[node name="Enemy" type="CharacterBody2D"]
-script = ExtResource("1_2jclc")
+[sub_resource type="CircleShape2D" id="CircleShape2D_b0x71"]
+radius = 500.0
+
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("interaction_range", "animated_sprite")]
+motion_mode = 1
+wall_min_slide_angle = 0.0
+script = ExtResource("1_k6deg")
+interaction_range = NodePath("Interaction Range")
+animated_sprite = NodePath("AnimatedSprite2D")
+movement_speed = 192.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
 sprite_frames = ExtResource("2_q22gl")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_qn0bv")
+
+[node name="Interaction Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Range"]
+shape = SubResource("CircleShape2D_b0x71")

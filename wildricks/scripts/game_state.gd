@@ -30,4 +30,12 @@ var evalie_room_2_dialogue_evalie: bool = false
 
 var evalie_room_2_fight_complete: bool = false
 
+var evalie_room_4_dahlia_1: bool = false
+
+var evalie_room_4_dahlia_2: bool = false
+
+var evalie_room_4_dialogue_dahlia: bool = false
+
+var evalie_room_4_dialogue_rock: bool = false
+
 

@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://c7f4kqfc1uqhg"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_mpqfj"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_5_4.gd" id="2_x1p0o"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_dhigi"]
+radius = 55.2268
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_mpqfj")]
+position = Vector2(173, 139)
+
+[node name="Transportation_Evalie_5_4" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_x1p0o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_5_4"]
+shape = SubResource("CircleShape2D_dhigi")
+
+[connection signal="body_entered" from="Transportation_Evalie_5_4" to="Transportation_Evalie_5_4" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_5_4" to="Transportation_Evalie_5_4" method="_on_body_exited"]

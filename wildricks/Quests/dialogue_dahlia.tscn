@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://cw1bekfmh24v4"]
+
+[ext_resource type="Script" path="res://Quests/dialogue_dahlia.gd" id="1_4rljf"]
+[ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="1_dr0fb"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_2c5ml"]
+radius = 55.0818
+
+[node name="Dialogue_dahlia" type="CharacterBody2D"]
+script = ExtResource("1_4rljf")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.495, 0.495)
+texture = ExtResource("1_dr0fb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_2c5ml")

@@ -19,7 +19,7 @@ position = Vector2(189, 282)
 position = Vector2(409, 279)
 
 [node name="Transportation_Evalie_1_2" type="Area2D" parent="."]
-position = Vector2(400, 500)
+position = Vector2(1100, 300)
 collision_layer = 64
 collision_mask = 2
 script = ExtResource("3_5hgrc")

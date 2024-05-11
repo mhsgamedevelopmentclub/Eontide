@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://5hn1nnj1qeml"]
+
+[ext_resource type="Texture2D" uid="uid://di2k6g0tynw43" path="res://assets/enewmy1.png" id="1_dtukw"]
+[ext_resource type="Script" path="res://Quests/Actionable_dahlia.gd" id="2_vu1ca"]
+[ext_resource type="Resource" uid="uid://bl0d6q46lp260" path="res://dialogues/story.dialogue" id="3_qb5tl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_na4gr"]
+radius = 99.2975
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3pde5"]
+radius = 151.954
+
+[node name="Dahlia" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.1, 0.1)
+texture = ExtResource("1_dtukw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_na4gr")
+
+[node name="Actionable_dahlia" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_vu1ca")
+dialogueResource = ExtResource("3_qb5tl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_dahlia"]
+shape = SubResource("CircleShape2D_3pde5")

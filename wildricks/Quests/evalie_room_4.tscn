@@ -1,0 +1,55 @@
+[gd_scene load_steps=10 format=3 uid="uid://cujxuagek1yls"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_2qlhn"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_4_3.gd" id="2_vt3p4"]
+[ext_resource type="PackedScene" uid="uid://cn442wd5s8btj" path="res://Quests/rock.tscn" id="4_q0rxv"]
+[ext_resource type="PackedScene" uid="uid://5hn1nnj1qeml" path="res://characters/dahlia.tscn" id="4_wkc3e"]
+[ext_resource type="PackedScene" uid="uid://cw1bekfmh24v4" path="res://Quests/dialogue_dahlia.tscn" id="5_44tfg"]
+[ext_resource type="PackedScene" uid="uid://bcus5rqpfg4ll" path="res://Quests/dialogue_rock.tscn" id="6_3g8t7"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_4_5.gd" id="7_x1ccm"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h8v30"]
+radius = 75.06
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_uwmok"]
+radius = 57.7062
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_2qlhn")]
+position = Vector2(279, 181)
+
+[node name="Transportation_Evalie_4_3" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_vt3p4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_4_3"]
+shape = SubResource("CircleShape2D_h8v30")
+
+[node name="Rock" parent="." instance=ExtResource("4_q0rxv")]
+position = Vector2(736, 119)
+
+[node name="Dahlia" parent="." instance=ExtResource("4_wkc3e")]
+position = Vector2(470, 382)
+
+[node name="Dialogue_dahlia" parent="." instance=ExtResource("5_44tfg")]
+position = Vector2(481, 254)
+
+[node name="Dialogue_rock" parent="." instance=ExtResource("6_3g8t7")]
+position = Vector2(740, -6)
+
+[node name="Transportation_Evalie_4_5" type="Area2D" parent="."]
+position = Vector2(1100, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("7_x1ccm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_4_5"]
+shape = SubResource("CircleShape2D_uwmok")
+
+[connection signal="body_entered" from="Transportation_Evalie_4_3" to="Transportation_Evalie_4_3" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_4_3" to="Transportation_Evalie_4_3" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Evalie_4_5" to="Transportation_Evalie_4_5" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_4_5" to="Transportation_Evalie_4_5" method="_on_body_exited"]

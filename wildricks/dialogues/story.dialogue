@@ -8,6 +8,7 @@ Your Adoring Siblings
 
 ~ Evalie
 if evalie_quest_room == 1:
+	set evalie_room_1_dialogue_evalie = true
 	Evalie: Ah, {{main_character_name}}! Gosh, you finally woke up! You’ve been sleeping forever!
 	Evalie: I, I mean-- Ahem!
 	Evalie: As you know, war is on the horizon. If we do not act, change will be inevitable. 
@@ -15,10 +16,10 @@ if evalie_quest_room == 1:
 	Evalie: Go get the gun I have left for you, then find me up ahead.
 	Evalie: … 
 	Evalie: Oh, and you must address me as Colonel Evalie, Sergeant {{main_character_name}}. Order!
-	set evalie_room_1_dialogue_evalie = true
 	=> END
 else if evalie_quest_room == 2:
-	if evalie_quest_room_2_fight_complete == false:
+	if evalie_room_2_fight_complete == false:
+		set evalie_room_2_dialogue_evalie = true
 		Evalie: When fighting the change that is time, you must be able to attack, heal, and defend. 
 		Evalie: Firstly, attacking. 
 		Evalie taught you the power of attacking!
@@ -33,7 +34,6 @@ else if evalie_quest_room == 2:
 		Evalie: Whether you choose to attack first, defend first, heal first… that requires practice to master. 
 		Evalie: Unlike our idiotic brother, who thinks that throwing every possible attack at the enemy is what’s gonna get you to win. Terrible, I say!
 		Evalie: Either way, that’s enough theory. Now let me see your practical application. Go on, now!
-		set evalie_room_2_dialogue_evalie = true
 		=> END
 	else:
 		Evalie: {{main_character_name}}, you’re so good!
@@ -43,18 +43,64 @@ else if evalie_quest_room == 2:
 		Evalie: Oh my god. Can you believe that Julian gave me a whole-ass list of QUOTES I’m supposed to spout at you?! 
 		Evalie: Just because Aurum gave him a higher ranking in our military doesn’t mean I’m any less capable. Abuse of power, that’s what I call it! Daylight robbery! The epitome of hypocrisy! Ugh, I can’t wait for this damn war to be over.  Then I can finally beat Julian up to my heart’s content!
 		Evalie: Go on, now. Master the art of Practical Application!!!
-
 else:
 	Evalie: Please go to the next room.
 	=> END
 
 ~ Rock
 if evalie_quest_room == 1:
-	Mysterious Inscriptions: I dreamed that we would go on Adventures together,
+	set evalie_room_1_dialogue_rock = true
+	Mysterious Inscription: I dreamed that we would go on Adventures together,
 	Mysterious Inscription: Explore worlds far from our own,
 	Mysterious Inscription: Discover the secrets we had always longed to discover. 
-	set evalie_room_1_dialogue_rock = true
+	=> END
+if evalie_quest_room == 4:
+	set evalie_room_4_dialogue_rock = true
+	Mysterious Inscription: But now you’re gone. 
+	Mysterious Inscription: You’ve grown up so much, and I miss you so much. 
+	Mysterious Inscription: I’m so proud of you, but I miss you so much. 
+	Mysterious Inscription: I couldn’t be more delighted in seeing who’ve you become, but I still miss you so much.
+	=> END
+
+else:
+	Go to the next room
+	=> END
+
+~ Dahlia
+if evalie_quest_room == 4:
+	if evalie_room_4_dahlia_1 == false:
+		if evalie_room_4_dahlia_2 == false:
+			set evalie_room_4_dialogue_dahlia = true
+			Dahlia: Hmm…. mmm… mmm??
+			Dahlia: AH! Who’re you?!
+			Dahlia: Daisy-- 
+			Dahlia: !
+			Dahlia: Where’d Daisy go?! She was supposed to wake me up should a sprout like you come to disturb me! Tch, what a slacker!
+			Dahlia: Say… I’m not really a fan of banging’ around. What do you say of a battle of wits, instead? 
+			- {{main_character_name}} Hell yeah
+				Dahlia: Finally, someone with an ounce of class around here. Let’s begin!
+				Dahlia: Firstly, did you know that North Korea and Cuba are the only 2 countries in the world that don’t sell Coca-Cola? 
+				Dahlia: This is because of trade sanctions between the United States and said countries. They’re really missing out, I must say. 
+				Dahlia: Now… tomatoes are considered vegetables by the USDA. This is likely because of their savory flavor and wide usage in savory dishes, but as they have seeds, they are actually fruits!
+				Dahlia: Oh! Oh! A common misconception is that medival cartographers would write “Here Be Dragons,” or “Hic Sunt Dracones” in Latin to denote places on maps which were unexplored or unknown. But actually, “Here be Lions” was much more commonly used. 
+				Dahlia: Have you heard the quote “Just don’t scroll too far, here be dragons~” before? 
+				Daisy: DAHLIA! 
+				Daisy: Why are you fraternizing with the enemy?!
+				Dahlia: ACK!
+				Dahlia: I guess we’ll have to end here today. Come back sometime later!
+				set evalie_room_4_dahlia_1 = true
+				=> END
+			- {{main_character_name}}: I’ll pass
+				Dahlia: How uncouth. What a sack of disappointment!
+				set evalie_room_4_dahlia_2 = true
+				=> END
+		else:
+			Dahlia: How uncouth. What a sack of disappointment!
+			=> END
+	else:
+		Dahlia: I need to recharge a bit before our next battle of wits. Come back again soon!
 	=> END
 else:
 	Go to the next room
 	=> END
+

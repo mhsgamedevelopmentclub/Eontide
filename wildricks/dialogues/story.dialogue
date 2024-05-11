@@ -1,7 +1,5 @@
-> MC. 
-
 ~ Dream
-MC: The battle is nearly on our doorsteps. 
+{{main_character_name}}: The battle is nearly on our doorsteps. 
 We are currently in 
 Love,
 Evalie, Julian, and Aurum
@@ -9,18 +7,54 @@ Your Adoring Siblings
 => END
 
 ~ Evalie
-Evalie: Ah, MC! Gosh, you finally woke up! You’ve been sleeping forever!
-I, I mean--
-Ahem!
-As you know, war is on the horizon. If we do not act, change will be inevitable. 
-Together, we shall stand against the tide of time, and keep peace within our community for years to come!
-Go get the gun I have left for you, then find me up ahead.
-… 
-Oh, and you must address me as Colonel Evalie, Sergeant MC. Order!
-=> END
+if evalie_quest_room == 1:
+	Evalie: Ah, {{main_character_name}}! Gosh, you finally woke up! You’ve been sleeping forever!
+	Evalie: I, I mean-- Ahem!
+	Evalie: As you know, war is on the horizon. If we do not act, change will be inevitable. 
+	Evalie: Together, we shall stand against the tide of time, and keep peace within our community for years to come!
+	Evalie: Go get the gun I have left for you, then find me up ahead.
+	Evalie: … 
+	Evalie: Oh, and you must address me as Colonel Evalie, Sergeant {{main_character_name}}. Order!
+	set evalie_room_1_dialogue_evalie = true
+	=> END
+else if evalie_quest_room == 2:
+	if evalie_quest_room_2_fight_complete == false:
+		Evalie: When fighting the change that is time, you must be able to attack, heal, and defend. 
+		Evalie: Firstly, attacking. 
+		Evalie taught you the power of attacking!
+		Evalie: Attack by shooting the enemy with your water gun. 
+		Evalie: Next, defending. 
+		Evalie taught you the power of defending!
+		Evalie: Use your hat to block the attacks of the enemies. 
+		Evalie: Finally, healing. 
+		Evalie taught you the power of healing!
+		Evalie: Heal by stimulating your metabolism, regenerating cells and sealing wounds. 
+		Evalie: The order by which you choose to halt the progression of the tide is extremely important. 
+		Evalie: Whether you choose to attack first, defend first, heal first… that requires practice to master. 
+		Evalie: Unlike our idiotic brother, who thinks that throwing every possible attack at the enemy is what’s gonna get you to win. Terrible, I say!
+		Evalie: Either way, that’s enough theory. Now let me see your practical application. Go on, now!
+		set evalie_room_2_dialogue_evalie = true
+		=> END
+	else:
+		Evalie: {{main_character_name}}, you’re so good!
+		Evalie: Remember, follow the path as cleanly as you can in life to achieve the most success. That, you must remember now and forever!
+		Evalie: Hmm… let’s see… is there anything else I need to go over?
+		Evalie: … 
+		Evalie: Oh my god. Can you believe that Julian gave me a whole-ass list of QUOTES I’m supposed to spout at you?! 
+		Evalie: Just because Aurum gave him a higher ranking in our military doesn’t mean I’m any less capable. Abuse of power, that’s what I call it! Daylight robbery! The epitome of hypocrisy! Ugh, I can’t wait for this damn war to be over.  Then I can finally beat Julian up to my heart’s content!
+		Evalie: Go on, now. Master the art of Practical Application!!!
+
+else:
+	Evalie: Please go to the next room.
+	=> END
 
 ~ Rock
-Mysterious Inscriptions: I dreamed that we would go on Adventures together,
-Explore worlds far from our own,
-Discover the secrets we had always longed to discover. 
-=> END
+if evalie_quest_room == 1:
+	Mysterious Inscriptions: I dreamed that we would go on Adventures together,
+	Mysterious Inscription: Explore worlds far from our own,
+	Mysterious Inscription: Discover the secrets we had always longed to discover. 
+	set evalie_room_1_dialogue_rock = true
+	=> END
+else:
+	Go to the next room
+	=> END

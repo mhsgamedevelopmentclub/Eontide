@@ -14,7 +14,20 @@ var evalie_go_home: bool = false
 
 #Quests
 
+#Quest 1
 var quest1_started: bool = false
 var quest1_complete: bool = false
 
 var main_character_name: String = "MC"
+
+var evalie_quest_room: int = 0
+
+var evalie_room_1_dialogue_evalie: bool = false
+
+var evalie_room_1_dialogue_rock: bool = false
+
+var evalie_room_2_dialogue_evalie: bool = false
+
+var evalie_room_2_fight_complete: bool = false
+
+

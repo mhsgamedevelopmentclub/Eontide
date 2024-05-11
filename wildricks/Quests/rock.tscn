@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cn442wd5s8btj"]
+
+[ext_resource type="Texture2D" uid="uid://b48ce7o2n3isy" path="res://assets/house1.png" id="1_hykqu"]
+[ext_resource type="Script" path="res://Quests/Actionable_rockInscription.gd" id="2_cmjm2"]
+[ext_resource type="Resource" uid="uid://bl0d6q46lp260" path="res://dialogues/story.dialogue" id="3_rvtdh"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xy3ra"]
+radius = 113.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_g28hl"]
+radius = 191.094
+
+[node name="Rock" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(1.485, 1.485)
+texture = ExtResource("1_hykqu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_xy3ra")
+
+[node name="Actionable_rockInscription" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_cmjm2")
+dialogueResource = ExtResource("3_rvtdh")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_rockInscription"]
+shape = SubResource("CircleShape2D_g28hl")

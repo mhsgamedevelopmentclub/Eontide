@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://ymljriq6tigi"]
+
+[ext_resource type="Texture2D" uid="uid://dean01mtcykrp" path="res://assets/Game_Logo.png" id="1_77627"]
+[ext_resource type="Script" path="res://Quests/Actionable_inscription.gd" id="2_7kmag"]
+[ext_resource type="Resource" uid="uid://bl0d6q46lp260" path="res://dialogues/story.dialogue" id="3_fp5l8"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i566j"]
+radius = 205.139
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fcycl"]
+radius = 350.875
+
+[node name="Final_inscription" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_i566j")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_77627")
+
+[node name="Actionable_inscription" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_7kmag")
+dialogueResource = ExtResource("3_fp5l8")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_inscription"]
+shape = SubResource("CircleShape2D_fcycl")

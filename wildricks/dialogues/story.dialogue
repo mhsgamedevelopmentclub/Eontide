@@ -99,6 +99,13 @@ if evalie_quest_room == 6:
 	Mysterious Inscription: When I felt like I knew everything about you,
 	Mysterious Inscription: And you knew everything about me. 
 	=> END
+if final_rock == true:
+	Mysterious Inscription: Because if you move on, I fear that means I have failed. 
+	Mysterious Inscription: And that the four of us were never special,
+	Mysterious Inscription: Just another story for the books,
+	Mysterious Inscription: That nobody will ever remember. 
+	set final_rock = false
+	=> END
 else:
 	Go to the next room
 	=> END
@@ -114,7 +121,7 @@ if evalie_quest_room == 4:
 			Dahlia: !
 			Dahlia: Where’d Daisy go?! She was supposed to wake me up should a sprout like you come to disturb me! Tch, what a slacker!
 			Dahlia: Say… I’m not really a fan of banging’ around. What do you say of a battle of wits, instead? 
-			- {{main_character_name}} Hell yeah
+			- {{main_character_name}}: Hell yeah
 				Dahlia: Finally, someone with an ounce of class around here. Let’s begin!
 				Dahlia: Firstly, did you know that North Korea and Cuba are the only 2 countries in the world that don’t sell Coca-Cola? 
 				Dahlia: This is because of trade sanctions between the United States and said countries. They’re really missing out, I must say. 
@@ -150,4 +157,118 @@ if evalie_room_5_get_skill == false:
 else:
 	You already opened the chest
 	=> END
+
+~ Julian
+if in_main == true:
+	if evalie_quest_complete == true:
+		if julian_quest_start == false:
+			Julian: Let's start our Adventure!
+			set julian_quest_start = true
+			=> END
+		else:
+			if julian_quest_complete == false:
+				Julian: What are you waiting for?
+				=> END
+			else:
+				Please wait for updates
+				=> END
+	else:
+		Please complete Evalie's quest first.
+		=> END
+if julian_quest_room == 1:
+	set julian_room_1_dialogue_julian = true
+	Julian: !
+	Julian: SERGEANT {{main_character_name}}! How many times have I told you the importance of being punctual?!
+	Julian: You are no more timely than a slithering slug! A loitering sloth! A flailing pelican! 
+	Julian: Drop down and give me ten! Nay, twenty! Thirty! NOW!
+	{{main_character_name}}: (stare...) (refusal written across their face)
+	Julian: … 
+	Julian: Ahem. 
+	Julian: As you already know, war is on the horizon. We must be prepared. 
+	Julian: First, I must test your readiness for battle. 
+	Julian: Let me see what skills Commander Evalie has taught you. 
+	Julian: Only then, when push comes to shove, may your true spirit shine through
+	Julian: The art of a true fight is one seldom known in our world 
+	Evalie: JULIANNNNN!!!! 
+	Evalie: I CAN HEAR YOUR YODELLING ALL THE WAY FROM HEEEEEEREEEEE!! GET MOVING ALREADY!!!!
+	Julian: Tch! How insolent can one be?!
+	Julian: Nevertheless, I have prepared a training ground to test your skills. 
+	=> END
+if julian_quest_room == 3:
+	set julian_room_3_dialogue_julian = true
+	Julian: I have prepared this training ground  
+	Julian: (Psst… my crab enemies look pretty good, eh? I painted all the rocks myself). 
+	Julian: NOW SHOW ME YOUR MASTERY!!!
+	Julian: HYAAAA!!
+	=> END
+if julian_quest_room == 4:
+	set julian_room_4_dialogue_julian = true
+	Julian: Very good, {{main_character_name}}. It seems that Commander Evalie, despite her myriad of flaws, has taught you well. 
+	Julian: It is now that I will teach you the importance of (some skill here) 
+	Julian goes on to explain the skill more. 
+	=> END
+if julian_quest_room == 5:
+	set julian_room_5_dialogue_julian = true
+	Julian: You have done well, MC. Truly worthy of the sergeant title that you carry. 
+	Julian: Now, you must go and see the leader of our village, Aurum. Only he can truly guide us to victory. 
+	Julian: Be strong, be proud, and may we attain endless victory. 
+	Julian: Bon voyage. Come see me in the main area if you need!
+	set julian_quest_complete = true
+	set julian_room_5_return = true
+	=> END
+
+~ Ending
+set final_inscription_start = true
+Evalie: God, it’s been so long since we were all back together. 
+Evalie: Really rockin’ that midlife crisis hairdo, Jules. You still gettin’ gum stuck in your hair these days?
+Julian: … 
+Julian: Even after all these years, you just love antagonizing me, don’t you? 
+Evalie: It’s what I do best, isn’t it?
+Evalie: … 
+Evalie: I… I don’t understand. 
+Evalie: How did this happen? 
+Evalie: We were good, weren’t we? 
+Evalie: So why did we only end up like this, somehow? Literally on opposite sides of the world? 
+Evalie: I thought we were all gonna live in some kind of giant house together, with four different complexes. 
+Julian: Yeah, with like, twenty bedrooms total, right? 
+Evalie: Mhm. And run a coffee shop down the street. Aurum the baker, me the barista, MC the cashier, and Julian the cranky manager. 
+Julian: What? Why would I be the cranky manager?!
+Evalie: … 
+Evalie: Aurum…  
+Evalie: You’ve been pretty quiet… what’s on your mind?
+Aurum: I suppose I’m just wondering where {{main_character_name}} is. They should be here by now. 
+Evalie: … 
+Evalie: Julian, how has your job been going? Last time I checked, you’ve been rapidly rising up the corporate ladder, hm?
+Julian: … 
+Julian: I suppose you could say that, yes. 
+Julian: Set a record for most unpaid overtime in the office. That’ll get you pretty far pretty fast. 
+Evalie: Hah, I’m not sure whether I should feel impressed or horrified. 
+Julian: Yeah, well. 
+Julian: Being alone at the office beats being alone at home. At least I can pretend I’m some kind of gung-ho martyr, instead of a slave to my own loneliness. 
+Aurum: … 
+Julian: So you’re blaming us for everything falling apart?!
+Aurum: People grow apart with time, it’s natural. 
+Evalie: NOT US!
+Evalie: Not us, Aurum! How… why can’t you realize that? 
+Julian: We’ve only ever had each other. The four of us, against the world. And now, you’re saying that was all for nothing. 
+Julian: … 
+Julian: You know… I’ve spent so many years wondering. Wondering why I’m so scared to make friends, to form bonds with people beyond the surface. 
+Julian: And it’s all because of this. This stupid place ruined everything. 
+Julian: Because I keep waiting for that… that feeling to come back. That feeling… of those memories at the back of my mind. 
+Julian: Of worlds and ideas and dreams long forgotten that I desperately crave but somehow can’t seem to remember. 
+Evalie: Exactly. That’s what makes this island so special, you know?
+Evalie: The memories, the connection, the feeling of being content, that there’s nothing to worry about. 
+Evalie: That’s why I… or I guess, we… have been clinging to the meaning of this place, instead of letting it go.
+Julian: And now it’s all gone. Changed beyond recognition. 
+Evalie: You mean, we’ve changed beyond recognition. 
+Aurum: … 
+Evalie: Just like you’re clinging to the meaning of this place, instead of letting it go, and embracing what is to come. 
+Evalie: Dang, I wonder when {{main_character_name}} will show up. 
+set final_inscription_end = true
+=> END
+
+
+
+
+
 

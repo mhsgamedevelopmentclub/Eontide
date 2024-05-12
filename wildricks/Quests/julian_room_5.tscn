@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://dljxdythkpj70"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_phc0m"]
+[ext_resource type="Script" path="res://Quests/Transportation_Julian_5_4.gd" id="2_n1b8k"]
+[ext_resource type="PackedScene" uid="uid://drxu4y4kwlclv" path="res://characters/julian.tscn" id="3_t561g"]
+[ext_resource type="PackedScene" uid="uid://qdhghnpayiyw" path="res://Quests/dialogue_julian.tscn" id="4_jdc4g"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_pwip4"]
+radius = 56.0357
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_phc0m")]
+position = Vector2(6, 226)
+
+[node name="Transportation_Julian_5_4" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_n1b8k")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Julian_5_4"]
+shape = SubResource("CircleShape2D_pwip4")
+
+[node name="Julian" parent="." instance=ExtResource("3_t561g")]
+position = Vector2(1016, 119)
+
+[node name="Dialogue_Julian" parent="." instance=ExtResource("4_jdc4g")]
+position = Vector2(1018, 20)
+
+[connection signal="body_entered" from="Transportation_Julian_5_4" to="Transportation_Julian_5_4" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Julian_5_4" to="Transportation_Julian_5_4" method="_on_body_exited"]

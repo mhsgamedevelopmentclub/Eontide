@@ -27,7 +27,6 @@ func _ready():
 	quest3_button.connect("pressed", _on_button_pressed.bind(quest3_button))
 	quest_details_exit.connect("pressed", _exit_quest_details)
 	exit_button.connect("pressed", _exit_achievements.bind(main_scene_path))
-	
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -55,5 +54,6 @@ func _exit_achievements(previous_scene):
 	print("exit")
 	if previous_scene == main_scene_path:
 		get_tree().change_scene_to_file(main_scene_path)
+
 
 

@@ -20,6 +20,10 @@ var evalie_dialogue: bool = false
 
 #Quests
 
+var final_inscription_start: bool = false
+var final_inscription_end: bool = false
+var final_rock: bool = false
+
 #Quest 1
 
 var evalie_quest_start: bool = false
@@ -55,8 +59,31 @@ var evalie_room_7_dialogue_evalie: bool = false
 
 var evalie_room_7_return: bool = false
 
+#Quest 2
+
+var julian_quest_start: bool = false
+var julian_quest_complete: bool = false
+
+var julian_quest_room: int = 0
+
+var julian_room_1_dialogue_julian: bool = false
+
+var julian_room_3_dialogue_julian: bool = false
+
+var julian_room_4_dialogue_julian: bool = false
+
+var julian_room_5_dialogue_julian: bool = false
+
+var julian_room_5_return: bool = false
+
 func _process(delta):
 	if evalie_quest_complete == true and evalie_room_7_return == true:
 		get_tree().change_scene_to_file("res://Quests/main.tscn")
 		evalie_room_7_return = false
+		in_main = true
+		evalie_quest_room = 0
+	if julian_quest_complete == true and julian_room_5_return == true:
+		get_tree().change_scene_to_file("res://Quests/main.tscn")
+		julian_room_5_return = false
+		julian_quest_room = 0
 		in_main = true

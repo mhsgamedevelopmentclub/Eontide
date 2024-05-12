@@ -15,7 +15,7 @@ func _ready() -> void:
 	achievements_button.connect('pressed', open_achievement)
 
 func new_game() -> void:
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	get_tree().change_scene_to_file("res://name_menu.tscn")
 
 func load_game() -> void:
 	pass

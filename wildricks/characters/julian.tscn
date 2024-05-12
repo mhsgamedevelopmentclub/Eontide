@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://drxu4y4kwlclv"]
+
+[ext_resource type="Texture2D" uid="uid://dtqiodrjrihjk" path="res://assets/julian front facing pixel.png" id="1_pium2"]
+[ext_resource type="Script" path="res://Quests/Actionable_Julian.gd" id="2_rwrh7"]
+[ext_resource type="Resource" uid="uid://bl0d6q46lp260" path="res://dialogues/story.dialogue" id="3_n1hj7"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hae1p"]
+radius = 58.8558
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1t577"]
+radius = 67.2681
+
+[node name="Julian" type="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hae1p")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_pium2")
+
+[node name="Actionable_Julian" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 2
+script = ExtResource("2_rwrh7")
+dialogueResource = ExtResource("3_n1hj7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actionable_Julian"]
+position = Vector2(-1, 49)
+shape = SubResource("CircleShape2D_1t577")

@@ -2,6 +2,7 @@ extends Area2D
 
 var player_entered: bool = false
 @onready var gameState = $"/root/GameState"
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
@@ -12,9 +13,8 @@ func _process(delta):
 	if player_entered == true:
 		if Input.is_action_just_pressed("transport"):
 			get_tree().change_scene_to_file("res://Quests/main.tscn")
+			gameState.julian_quest_room = 0
 			gameState.in_main = true
-			gameState.evalie_quest_room = 0
-
 
 
 

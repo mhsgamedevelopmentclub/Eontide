@@ -1,16 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://cb7g4ef0k4d6o"]
+[gd_scene load_steps=8 format=3 uid="uid://cb7g4ef0k4d6o"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_cnqph"]
 [ext_resource type="Script" path="res://Quests/Transportation_Main_Evalie.gd" id="2_gkqns"]
 [ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="3_6ryno"]
+[ext_resource type="Script" path="res://Quests/Transportation_Main_Julian.gd" id="4_mcusg"]
+[ext_resource type="PackedScene" uid="uid://drxu4y4kwlclv" path="res://characters/julian.tscn" id="5_ltjj1"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_y82th"]
 radius = 58.3095
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lwj47"]
+radius = 55.0818
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Character_1" parent="." instance=ExtResource("1_cnqph")]
-position = Vector2(342, 316)
+position = Vector2(482, 482)
 
 [node name="Transportation_Main_Evalie" type="Area2D" parent="."]
 position = Vector2(100, 100)
@@ -22,7 +27,21 @@ script = ExtResource("2_gkqns")
 shape = SubResource("CircleShape2D_y82th")
 
 [node name="Evalie" parent="." instance=ExtResource("3_6ryno")]
-position = Vector2(211, 117)
+position = Vector2(255, 125)
+
+[node name="Transportation_Main_Julian" type="Area2D" parent="."]
+position = Vector2(800, 100)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("4_mcusg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Main_Julian"]
+shape = SubResource("CircleShape2D_lwj47")
+
+[node name="Julian" parent="." instance=ExtResource("5_ltjj1")]
+position = Vector2(647, 142)
 
 [connection signal="body_entered" from="Transportation_Main_Evalie" to="Transportation_Main_Evalie" method="_on_body_entered"]
 [connection signal="body_exited" from="Transportation_Main_Evalie" to="Transportation_Main_Evalie" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Main_Julian" to="Transportation_Main_Julian" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Main_Julian" to="Transportation_Main_Julian" method="_on_body_exited"]

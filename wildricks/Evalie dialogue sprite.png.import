@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://8adg8npqiu8f"
-path="res://.godot/imported/MC dialogue box happy.png-ee67779ee70f4a9edd0d668fcfb230fb.ctex"
+uid="uid://c0iav03n2upmu"
+path="res://.godot/imported/Evalie dialogue sprite.png-4d370811a3cd934dafc23a6f4561c09e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/MC dialogue box happy.png"
-dest_files=["res://.godot/imported/MC dialogue box happy.png-ee67779ee70f4a9edd0d668fcfb230fb.ctex"]
+source_file="res://Evalie dialogue sprite.png"
+dest_files=["res://.godot/imported/Evalie dialogue sprite.png-4d370811a3cd934dafc23a6f4561c09e.ctex"]
 
 [params]
 

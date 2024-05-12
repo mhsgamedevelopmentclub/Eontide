@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://dny1s84ddrrdi"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_bxmui"]
+[ext_resource type="Script" path="res://Quests/ending_scene.gd" id="1_siim4"]
+[ext_resource type="PackedScene" uid="uid://ymljriq6tigi" path="res://Quests/final_inscription.tscn" id="2_8he1g"]
+[ext_resource type="PackedScene" uid="uid://cn442wd5s8btj" path="res://Quests/rock.tscn" id="4_sxlut"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_siim4")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+offset_right = 1153.0
+offset_bottom = 645.0
+color = Color(0, 0, 0, 1)
+
+[node name="Character_1" parent="." instance=ExtResource("1_bxmui")]
+position = Vector2(167, 273)
+
+[node name="Final_inscription" parent="." instance=ExtResource("2_8he1g")]
+position = Vector2(794, 286)
+
+[node name="Rock" parent="." instance=ExtResource("4_sxlut")]
+position = Vector2(128, 118)

@@ -57,4 +57,10 @@ layout_mode = 2
 text = "Start Game
 "
 
+[node name="Ending" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Ending Scene
+"
+
 [connection signal="text_changed" from="VBoxContainer/TextEdit" to="." method="_on_text_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_button_pressed"]

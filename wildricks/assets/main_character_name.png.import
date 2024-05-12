@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c67q88rlb3dnp"
-path="res://.godot/imported/evalie dialogue.png-31425a60d142f45b6578fb8f94ff54e6.ctex"
+uid="uid://8adg8npqiu8f"
+path="res://.godot/imported/main_character_name.png-d2ef61b66069fd8af3a4217f0d62ae8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/evalie dialogue.png"
-dest_files=["res://.godot/imported/evalie dialogue.png-31425a60d142f45b6578fb8f94ff54e6.ctex"]
+source_file="res://assets/main_character_name.png"
+dest_files=["res://.godot/imported/main_character_name.png-d2ef61b66069fd8af3a4217f0d62ae8a.ctex"]
 
 [params]
 

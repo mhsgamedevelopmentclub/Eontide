@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://bvjic8w775ocw"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_swll4"]
+[ext_resource type="Script" path="res://Quests/Transportation_Julian_3_2.gd" id="2_vha6u"]
+[ext_resource type="Script" path="res://Quests/Transportation_Julian_3_4.gd" id="3_whtch"]
+[ext_resource type="PackedScene" uid="uid://drxu4y4kwlclv" path="res://characters/julian.tscn" id="4_l8qmj"]
+[ext_resource type="PackedScene" uid="uid://qdhghnpayiyw" path="res://Quests/dialogue_julian.tscn" id="5_xxtlu"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_naago"]
+radius = 54.3323
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_28j5x"]
+radius = 56.2228
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_swll4")]
+position = Vector2(-2, 241)
+
+[node name="Transportation_Julian_3_2" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_vha6u")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Julian_3_2"]
+shape = SubResource("CircleShape2D_naago")
+
+[node name="Transportation_Julian_3_4" type="Area2D" parent="."]
+position = Vector2(1100, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("3_whtch")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Julian_3_4"]
+shape = SubResource("CircleShape2D_28j5x")
+
+[node name="Julian" parent="." instance=ExtResource("4_l8qmj")]
+position = Vector2(33, 156)
+
+[node name="Dialogue_Julian" parent="." instance=ExtResource("5_xxtlu")]
+position = Vector2(30, 61)
+
+[connection signal="body_entered" from="Transportation_Julian_3_2" to="Transportation_Julian_3_2" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Julian_3_2" to="Transportation_Julian_3_2" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Julian_3_4" to="Transportation_Julian_3_4" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Julian_3_4" to="Transportation_Julian_3_4" method="_on_body_exited"]

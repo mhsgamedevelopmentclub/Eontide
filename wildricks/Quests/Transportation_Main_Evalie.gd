@@ -12,9 +12,10 @@ func _ready():
 func _process(delta):
 	if player_entered == true:
 		if Input.is_action_just_pressed("transport"):
-			get_tree().change_scene_to_file("res://Quests/evalie_room_1.tscn")
-			gameState.evalie_quest_room = 1
-			gameState.in_main = false
+			if gameState.evalie_quest_start == true:
+				get_tree().change_scene_to_file("res://Quests/evalie_room_1.tscn")
+				gameState.evalie_quest_room = 1
+				gameState.in_main = false
 
 
 

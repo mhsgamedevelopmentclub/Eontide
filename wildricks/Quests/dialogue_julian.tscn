@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://qdhghnpayiyw"]
+
+[ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="1_5e1gi"]
+[ext_resource type="Script" path="res://Quests/dialogue_julian.gd" id="1_sw3ml"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_oh4nm"]
+radius = 58.2151
+
+[node name="Dialogue_Julian" type="CharacterBody2D"]
+script = ExtResource("1_sw3ml")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_oh4nm")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_5e1gi")

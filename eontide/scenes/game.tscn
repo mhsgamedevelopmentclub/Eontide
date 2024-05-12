@@ -1,11 +1,17 @@
-[gd_scene load_steps=5 format=3 uid="uid://cffamuqb4w6ij"]
+[gd_scene load_steps=7 format=3 uid="uid://cffamuqb4w6ij"]
 
 [ext_resource type="Material" uid="uid://dtbavw6rvpvdp" path="res://resources/rain_shader_material.tres" id="1_77c0w"]
+[ext_resource type="PackedScene" uid="uid://iooa600vxlif" path="res://scenes/hud/hud.tscn" id="1_d5qar"]
+[ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_kp0go"]
 [ext_resource type="PackedScene" uid="uid://diwnfv1g8qda3" path="res://scenes/player.tscn" id="2_1mt67"]
 [ext_resource type="TileSet" uid="uid://du7vmnqbnutvx" path="res://resources/overworld_tileset.tres" id="2_6dvpx"]
 [ext_resource type="PackedScene" uid="uid://cw144abcsc5l1" path="res://scenes/enemy.tscn" id="4_xn4xk"]
 
-[node name="Game" type="Node2D"]
+[node name="Game" type="Node2D" node_paths=PackedStringArray("hud")]
+script = ExtResource("1_kp0go")
+hud = NodePath("HUD")
+
+[node name="HUD" parent="." instance=ExtResource("1_d5qar")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
@@ -35,7 +41,7 @@ layer_2/name = "foliage"
 layer_2/tile_data = PackedInt32Array(-1703940, 65538, 4, -1638404, 65538, 4, -1572868, 65538, 4, -1507332, 65538, 4, -1769468, 65538, 4, -1703932, 65538, 4, -1638396, 65538, 4, -1572860, 65538, 4, -1507324, 2, 4, -1507325, 2, 4, -1441796, 2, 4, -1441797, 2, 4, -1835004, 2, 4, -1835005, 2, 4, -1769476, 2, 4, -1769477, 2, 4, -1572861, 262146, 3, -1638397, 262146, 3, -1703933, 262146, 3, -1769469, 262146, 3, -1507333, 262146, 3, -1572869, 262146, 3, -1638405, 262146, 3, -1703941, 262146, 3, -851994, 131074, 3, -851995, 131074, 3, -851996, 131074, 3, -786458, 131074, 4, -786459, 131074, 4, -786460, 131074, 4, -393246, 196610, 4, -65561, 196610, 4, 458723, 196610, 4, 655343, 196610, 4, 851946, 196610, 4, 1179628, 196610, 4, 1376250, 196610, 4, 1048565, 196610, 4, 1310727, 196610, 4, 851980, 196610, 4, 1179666, 196610, 4, 458771, 196610, 4, -65517, 196610, 4, 851990, 196610, 4, 65562, 196610, 4, -524261, 196610, 4, -1507314, 196610, 4, -1834985, 196610, 4, -2359275, 196610, 4, -2621413, 196610, 4, -1507297, 196610, 4, -1310751, 196610, 4, -1441812, 196610, 4, -2031637, 196610, 4, -2162719, 196610, 4, -2621464, 196610, 4, -2752544, 196610, 4, -1507341, 196610, 4, -1769499, 196610, 4)
 
 [node name="Player" parent="." instance=ExtResource("2_1mt67")]
-position = Vector2(-3383, -1755)
+position = Vector2(6, 272)
 
 [node name="Enemy" parent="." instance=ExtResource("4_xn4xk")]
 position = Vector2(764, -282)

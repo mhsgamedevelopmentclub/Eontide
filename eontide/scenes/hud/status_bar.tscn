@@ -1,0 +1,42 @@
+[gd_scene load_steps=3 format=3 uid="uid://ch0fkej28lnhp"]
+
+[ext_resource type="Script" path="res://scripts/hud/status_bar.gd" id="1_frdp3"]
+[ext_resource type="Texture2D" uid="uid://cex7b6lvkebau" path="res://assets/barHorizontal_green.png" id="1_mbrmr"]
+
+[node name="Status Bar" type="CanvasLayer"]
+script = ExtResource("1_frdp3")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = -1
+anchor_left = 0.05
+anchor_top = 0.05
+anchor_right = 0.05
+anchor_bottom = 0.05
+offset_right = 200.0
+offset_bottom = 53.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+
+[node name="Health Bar" type="TextureProgressBar" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+value = 100.0
+texture_progress = ExtResource("1_mbrmr")
+
+[node name="Label" type="Label" parent="VBoxContainer/Health Bar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "100 / 100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Fragment Bar" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Fragments: 0"
+vertical_alignment = 1

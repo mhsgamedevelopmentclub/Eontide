@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhv3iwvs3worx"]
+
+[ext_resource type="Script" path="res://scripts/battle_sys/battle.gd" id="1_6co17"]
+[ext_resource type="PackedScene" uid="uid://crks0u1dcickr" path="res://scenes/battle_sys/battle_hud.tscn" id="2_6w3kk"]
+[ext_resource type="Script" path="res://scripts/battle_sys/turn_queue.gd" id="3_ln5t3"]
+
+[node name="Battle" type="Node"]
+script = ExtResource("1_6co17")
+
+[node name="HUD" parent="." instance=ExtResource("2_6w3kk")]
+
+[node name="Turn Queue" type="Node" parent="."]
+script = ExtResource("3_ln5t3")
+
+[node name="Heros" type="Node" parent="Turn Queue"]
+
+[node name="Enemies" type="Node" parent="Turn Queue"]

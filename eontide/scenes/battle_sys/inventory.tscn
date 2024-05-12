@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bydfq2apgvxox"]
+[gd_scene load_steps=3 format=3 uid="uid://bydfq2apgvxox"]
 
 [ext_resource type="Script" path="res://scripts/battle_sys/inventory.gd" id="1_g750g"]
+[ext_resource type="PackedScene" uid="uid://bsnn3agkf1sp0" path="res://scenes/draggable_container.tscn" id="2_cg7x5"]
 
 [node name="Inventory" type="Control"]
 layout_mode = 3
@@ -47,3 +48,6 @@ vertical_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.286275, 0.286275, 0.286275, 1)
+
+[node name="Draggable Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("2_cg7x5")]
+layout_mode = 1

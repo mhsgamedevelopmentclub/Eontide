@@ -1,8 +1,8 @@
 class_name BattleHUD
 extends CanvasLayer
 
-@onready var inventory: Inventory = (
-	$'HBoxContainer/VBoxContainer/Inventory' as Inventory)
+@onready var inventory: BattleInventory = (
+	$'HBoxContainer/VBoxContainer/Inventory' as BattleInventory)
 @onready var turn_wheel: TurnWheel = (
 	$'HBoxContainer/VBoxContainer/Turn Wheel' as TurnWheel)
 @onready var atb_container: ATBContainer = (

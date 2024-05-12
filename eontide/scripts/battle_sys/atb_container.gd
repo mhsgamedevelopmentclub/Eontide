@@ -1,8 +1,8 @@
 class_name ATBContainer
 extends Control
 
-@onready var container: VBoxContainer = $VBoxContainer
-@onready var atb_bar: PackedScene #= preload('res://scenes/battle_sys/atb_bar.tscn')
+@onready var container: VBoxContainer = $VBoxContainer as VBoxContainer
+@onready var atb_bar: PackedScene = preload('res://scenes/battle_sys/atb_bar.tscn')
 
 func init(heros: Array[PlayerActor], enemies: Array[EnemyActor]) -> void:
 	for actor in (heros+enemies as Array[Actor]):

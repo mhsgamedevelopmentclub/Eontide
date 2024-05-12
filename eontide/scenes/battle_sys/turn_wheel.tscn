@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm2ixvpaqxaiq"]
+[gd_scene load_steps=3 format=3 uid="uid://cm2ixvpaqxaiq"]
 
 [ext_resource type="Script" path="res://scripts/battle_sys/turn_wheel.gd" id="1_0vpr8"]
+[ext_resource type="PackedScene" uid="uid://bsnn3agkf1sp0" path="res://scenes/draggable_container.tscn" id="2_uksn7"]
 
 [node name="Turn Wheel" type="Control"]
 layout_mode = 3
@@ -53,3 +54,6 @@ icon_alignment = 1
 layout_mode = 2
 size_flags_vertical = 3
 color = Color(0.360784, 0.360784, 0.360784, 1)
+
+[node name="Draggable Container" parent="Background/MarginContainer/VBoxContainer/ColorRect" instance=ExtResource("2_uksn7")]
+layout_mode = 1

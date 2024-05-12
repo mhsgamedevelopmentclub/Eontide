@@ -19,7 +19,10 @@ func _ready() -> void:
 
 func _on_open_change_turn() -> void:
 	button.disabled = false
-	await button.pressed
+	while true:
+		await button.pressed
+		if container.get_children().size() != 0:
+			break
 	var turn_list: Array[Skill] = []
 	for skill in (container.get_children() as Array[Draggable]): 
 		turn_list.append(skill.item) 

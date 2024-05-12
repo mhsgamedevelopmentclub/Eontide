@@ -14,6 +14,7 @@ func init(actor: Actor) -> void:
 	timer.connect('timeout', actor._on_atb_timer_timeout)
 	actor.connect('finish_change_turn', timer.start)
 	progress_bar.max_value = timer.wait_time
+	actor.atb_bar = self
 
 func _process(_delta) -> void:
 	progress_bar.value = timer.wait_time - timer.time_left

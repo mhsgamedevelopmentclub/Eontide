@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://bjsu0h8ob28x"]
+[gd_scene load_steps=3 format=3 uid="uid://bjsu0h8ob28x"]
 
 [ext_resource type="Script" path="res://scripts/battle_sys/player_actor.gd" id="1_02pmv"]
+[ext_resource type="Texture2D" uid="uid://b0jhf8iu5cv61" path="res://assets/mc battle sprite off.png" id="2_51h62"]
 
 [node name="PlayerActor" type="Node2D"]
 script = ExtResource("1_02pmv")
+sprite = ExtResource("2_51h62")
+max_health = 100

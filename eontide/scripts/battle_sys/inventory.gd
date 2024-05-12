@@ -4,7 +4,7 @@ extends Control
 @onready var container: DraggableContainer = (
 	$'Background/MarginContainer/VBoxContainer/ColorRect/Draggable Container'
 	as DraggableContainer)
-@onready var draggable_tscn: PackedScene #= preload('res://scenes/menus/draggable.tscn')
+@onready var draggable_tscn: PackedScene = preload('res://scenes/draggable.tscn')
 
 func init(player: PlayerActor) -> void:
 	var inventory: Array[Skill] = player.inventory

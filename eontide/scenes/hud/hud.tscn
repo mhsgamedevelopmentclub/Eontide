@@ -1,10 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://iooa600vxlif"]
+[gd_scene load_steps=6 format=3 uid="uid://iooa600vxlif"]
 
 [ext_resource type="PackedScene" uid="uid://dvy5or6g55rxg" path="res://scenes/hud/achievements_menu.tscn" id="1_2q1es"]
+[ext_resource type="Script" path="res://scripts/hud/hud.gd" id="1_xfpa3"]
+[ext_resource type="PackedScene" uid="uid://ch0fkej28lnhp" path="res://scenes/hud/status_bar.tscn" id="2_1l21c"]
 [ext_resource type="PackedScene" uid="uid://jhfq16vyev1q" path="res://scenes/hud/inventory_menu.tscn" id="2_adpnv"]
 [ext_resource type="PackedScene" uid="uid://c7ebru3o0xkg1" path="res://scenes/hud/pause_menu.tscn" id="2_psri3"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_xfpa3")
+
+[node name="Status Bar" parent="." instance=ExtResource("2_1l21c")]
 
 [node name="Achievements" parent="." instance=ExtResource("1_2q1es")]
 visible = false

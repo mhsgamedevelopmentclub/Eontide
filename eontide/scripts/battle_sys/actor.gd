@@ -11,11 +11,14 @@ signal do_damage(damage: int)
 signal update_health_ui(value: int)
 signal start_change_turn
 signal finish_change_turn
-signal death
+signal death(actor: Actor)
 
 @export var sprite: CompressedTexture2D
 @export var max_health: int
 @export var inventory: Array[Skill]
+
+var atb_bar: ATBBar
+var ui_visual: CenterContainer
 
 var turn_cycle: Array[Skill]
 var cur_health: int
@@ -33,11 +36,11 @@ func play_turn() -> void:
 		changing_time = false
 		cur_idx = 0
 	print("current health: ", cur_health)
-	print("current action: ", turn_cycle[cur_idx])
+	print("current action: ", turn_cycle[cur_idx].name)
 	barrier = 0
 	await _use_skill(turn_cycle[cur_idx])
 	cur_idx = (cur_idx + 1) % turn_cycle.size()
-	print("Turn complete")
+	print(name+" turn complete")
 
 func _ready() -> void:
 	cur_health = max_health
@@ -83,7 +86,8 @@ func _on_damage_recived(damage: int) -> void:
 	if damage > 0:
 		cur_health -= damage
 	if cur_health <= 0:
-		emit_signal('death')
+		# frees the actor not the ui sprite dumbass
+		emit_signal(&'death', self)
 	emit_signal('update_health_ui', cur_health)
 
 ## Sets changing_time to true when signal is recieved

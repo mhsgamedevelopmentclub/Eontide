@@ -9,7 +9,7 @@ script = ExtResource("1_ynj8r")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1150.0
 offset_bottom = 645.0
-color = Color(0.407843, 0.588235, 0.556863, 1)
+color = Color(0, 0, 0, 0.251)
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 offset_left = -1.0

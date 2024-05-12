@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://ck37loxcjqbos"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_uu014"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_7_6.gd" id="2_d4spq"]
+[ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="3_c0h8g"]
+[ext_resource type="PackedScene" uid="uid://b0k5jay5ht5yk" path="res://Quests/dialogue_evalie.tscn" id="4_dmumr"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_re7pa"]
+radius = 53.6004
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_uu014")]
+position = Vector2(91, 138)
+
+[node name="Transportation_Evalie_7_6" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_d4spq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_7_6"]
+shape = SubResource("CircleShape2D_re7pa")
+
+[node name="Evalie" parent="." instance=ExtResource("3_c0h8g")]
+position = Vector2(639, 152)
+
+[node name="Dialogue_evalie" parent="." instance=ExtResource("4_dmumr")]
+position = Vector2(641, 52)
+
+[connection signal="body_entered" from="Transportation_Evalie_7_6" to="Transportation_Evalie_7_6" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_7_6" to="Transportation_Evalie_7_6" method="_on_body_exited"]

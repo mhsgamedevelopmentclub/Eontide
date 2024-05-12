@@ -12,11 +12,18 @@ var go_to_town: bool = false
 
 var evalie_go_home: bool = false
 
+#Main
+
+var in_main: bool = true
+
+var evalie_dialogue: bool = false
+
 #Quests
 
 #Quest 1
-var quest1_started: bool = false
-var quest1_complete: bool = false
+
+var evalie_quest_start: bool = false
+var evalie_quest_complete: bool = false
 
 var main_character_name: String = "MC"
 
@@ -38,4 +45,18 @@ var evalie_room_4_dialogue_dahlia: bool = false
 
 var evalie_room_4_dialogue_rock: bool = false
 
+var evalie_room_5_get_skill: bool = false
 
+var evalie_room_5_dialogue_treasure_chest: bool = false
+
+var evalie_room_6_dialogue_rock: bool = false
+
+var evalie_room_7_dialogue_evalie: bool = false
+
+var evalie_room_7_return: bool = false
+
+func _process(delta):
+	if evalie_quest_complete == true and evalie_room_7_return == true:
+		get_tree().change_scene_to_file("res://Quests/main.tscn")
+		evalie_room_7_return = false
+		in_main = true

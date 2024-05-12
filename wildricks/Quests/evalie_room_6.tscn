@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://laexbgrvjva6"]
+
+[ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_11wwh"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_6_5.gd" id="2_tx3is"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_6_7.gd" id="3_pood1"]
+[ext_resource type="PackedScene" uid="uid://cn442wd5s8btj" path="res://Quests/rock.tscn" id="4_orxmt"]
+[ext_resource type="PackedScene" uid="uid://bcus5rqpfg4ll" path="res://Quests/dialogue_rock.tscn" id="5_x78kl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7n43b"]
+radius = 58.0775
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_s4iy0"]
+radius = 46.5296
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Character_1" parent="." instance=ExtResource("1_11wwh")]
+position = Vector2(114, 126)
+
+[node name="Transportation_Evalie_6_5" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("2_tx3is")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_6_5"]
+shape = SubResource("CircleShape2D_7n43b")
+
+[node name="Transportation_Evalie_6_7" type="Area2D" parent="."]
+position = Vector2(1100, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("3_pood1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_6_7"]
+shape = SubResource("CircleShape2D_s4iy0")
+
+[node name="Rock" parent="." instance=ExtResource("4_orxmt")]
+position = Vector2(779, 193)
+
+[node name="Dialogue_rock" parent="." instance=ExtResource("5_x78kl")]
+position = Vector2(782, 65)
+
+[connection signal="body_entered" from="Transportation_Evalie_6_5" to="Transportation_Evalie_6_5" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_6_5" to="Transportation_Evalie_6_5" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Evalie_6_7" to="Transportation_Evalie_6_7" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_6_7" to="Transportation_Evalie_6_7" method="_on_body_exited"]

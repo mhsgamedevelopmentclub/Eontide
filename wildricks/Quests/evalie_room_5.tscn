@@ -1,10 +1,16 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7f4kqfc1uqhg"]
+[gd_scene load_steps=8 format=3 uid="uid://c7f4kqfc1uqhg"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_mpqfj"]
 [ext_resource type="Script" path="res://Quests/Transportation_Evalie_5_4.gd" id="2_x1p0o"]
+[ext_resource type="PackedScene" uid="uid://c2or0rvtsjki0" path="res://Quests/treasure_chest.tscn" id="3_cxl48"]
+[ext_resource type="PackedScene" uid="uid://b3xubeieynf2o" path="res://Quests/dialogue_treasure_chest.tscn" id="4_07tlr"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_5_6.gd" id="5_j5n0m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dhigi"]
 radius = 55.2268
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_fd65j"]
+radius = 53.7587
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,5 +26,22 @@ script = ExtResource("2_x1p0o")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_5_4"]
 shape = SubResource("CircleShape2D_dhigi")
 
+[node name="Treasure Chest" parent="." instance=ExtResource("3_cxl48")]
+position = Vector2(981, 142)
+
+[node name="Dialogue_treasure_chest" parent="." instance=ExtResource("4_07tlr")]
+position = Vector2(980, 37)
+
+[node name="Transportation_Evalie_5_6" type="Area2D" parent="."]
+position = Vector2(1100, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("5_j5n0m")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_5_6"]
+shape = SubResource("CircleShape2D_fd65j")
+
 [connection signal="body_entered" from="Transportation_Evalie_5_4" to="Transportation_Evalie_5_4" method="_on_body_entered"]
 [connection signal="body_exited" from="Transportation_Evalie_5_4" to="Transportation_Evalie_5_4" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Evalie_5_6" to="Transportation_Evalie_5_6" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_5_6" to="Transportation_Evalie_5_6" method="_on_body_exited"]

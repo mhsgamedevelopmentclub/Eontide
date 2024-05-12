@@ -7,6 +7,29 @@ Your Adoring Siblings
 => END
 
 ~ Evalie
+if in_main == true:
+	if evalie_quest_start == false:
+		Evalie: Lets' begin our adventure! Please stand beside the sign and press "M" to begin.
+		set evalie_quest_start = true
+		=> END
+	else:
+		if evalie_quest_complete == false:
+			Evalie: What are you waiting for?
+			=> END
+		else:
+			if evalie_dialogue == false:
+				Evalie: I’m proud of you, kiddo. 
+				Evalie: You’ve refused to learn how to fight for so long, but now, you’ve finally embraced your role as someone who is willing to resist change. 
+				Evalie: Anyway, I’ll be chilling here, mixing up stuff.
+				Evalie: It’s time you learn whatever… shenanigans Major Julian has prepared for you. 
+				Evalie: Ugh, I still can’t believe Aurum gave him a more grandiose title than me. I deserve to be 
+				Evalie: Have fun with Jules, I guess. I’ll see you soon!
+				set evalie_dialogue = true
+				=> END
+			else:
+				Evalie: Have fun with Jules. I’ll see you soon!
+				=> END
+
 if evalie_quest_room == 1:
 	set evalie_room_1_dialogue_evalie = true
 	Evalie: Ah, {{main_character_name}}! Gosh, you finally woke up! You’ve been sleeping forever!
@@ -43,6 +66,15 @@ else if evalie_quest_room == 2:
 		Evalie: Oh my god. Can you believe that Julian gave me a whole-ass list of QUOTES I’m supposed to spout at you?! 
 		Evalie: Just because Aurum gave him a higher ranking in our military doesn’t mean I’m any less capable. Abuse of power, that’s what I call it! Daylight robbery! The epitome of hypocrisy! Ugh, I can’t wait for this damn war to be over.  Then I can finally beat Julian up to my heart’s content!
 		Evalie: Go on, now. Master the art of Practical Application!!!
+		=> END
+else if evalie_quest_room == 7:
+	Evalie: {{main_character_name}}! You have done well! 
+	Evalie: Come now. Let’s head back!
+	set evalie_room_7_dialogue_evalie = true
+	set evalie_quest_complete = true
+	set evalie_room_7_return = true
+	=> END
+
 else:
 	Evalie: Please go to the next room.
 	=> END
@@ -61,7 +93,12 @@ if evalie_quest_room == 4:
 	Mysterious Inscription: I’m so proud of you, but I miss you so much. 
 	Mysterious Inscription: I couldn’t be more delighted in seeing who’ve you become, but I still miss you so much.
 	=> END
-
+if evalie_quest_room == 6:
+	set evalie_room_6_dialogue_rock = true
+	Mysterious Inscription: I miss the days past, when things were idyllic and peaceful. 
+	Mysterious Inscription: When I felt like I knew everything about you,
+	Mysterious Inscription: And you knew everything about me. 
+	=> END
 else:
 	Go to the next room
 	=> END
@@ -102,5 +139,15 @@ if evalie_quest_room == 4:
 	=> END
 else:
 	Go to the next room
+	=> END
+
+~ Treasure
+if evalie_room_5_get_skill == false:
+	set evalie_room_5_dialogue_treasure_chest = true
+	Treasure chest: Yout got a skill!!!!
+	set evalie_room_5_get_skill = true
+	=> END
+else:
+	You already opened the chest
 	=> END
 

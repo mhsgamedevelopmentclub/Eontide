@@ -31,7 +31,7 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if gameState.quest1_complete == true:
+	if gameState.evalie_quest_complete == true:
 		if ResourceLoader.exists(quest1_texture_path):
 			quest1_texture.texture = load(quest1_texture_path)
 	else:

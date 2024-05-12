@@ -13,3 +13,8 @@ func _process(delta):
 			visible = true
 		else:
 			visible = false
+	if gameState.evalie_quest_room == 6:
+		if gameState.evalie_room_6_dialogue_rock == false:
+			visible = true
+		else:
+			visible = false

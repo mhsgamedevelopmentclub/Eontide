@@ -1,0 +1,17 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://dtbavw6rvpvdp"]
+
+[ext_resource type="Shader" path="res://shaders/rain_steampunkdemon/rain_and_snow_shader.gdshader" id="1_urpas"]
+
+[resource]
+shader = ExtResource("1_urpas")
+shader_parameter/rain_amount = 200.0
+shader_parameter/near_rain_length = 0.1
+shader_parameter/far_rain_length = 0.2
+shader_parameter/near_rain_width = 0.5
+shader_parameter/far_rain_width = 1.0
+shader_parameter/near_rain_transparency = 1.0
+shader_parameter/far_rain_transparency = 0.5
+shader_parameter/rain_color = Color(0.6, 0.6, 0.6, 1)
+shader_parameter/base_rain_speed = 0.5
+shader_parameter/additional_rain_speed = 0.5
+shader_parameter/slant = 0.2

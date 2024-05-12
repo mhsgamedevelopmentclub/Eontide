@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://6sv2wtidymfw"]
+[gd_scene load_steps=10 format=3 uid="uid://6sv2wtidymfw"]
 
 [ext_resource type="PackedScene" uid="uid://c02reylpm0b73" path="res://characters/evalie.tscn" id="1_nnwjj"]
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="2_jv7w6"]
@@ -6,9 +6,13 @@
 [ext_resource type="PackedScene" uid="uid://cn442wd5s8btj" path="res://Quests/rock.tscn" id="4_th1xg"]
 [ext_resource type="PackedScene" uid="uid://b0k5jay5ht5yk" path="res://Quests/dialogue_evalie.tscn" id="5_uwytr"]
 [ext_resource type="PackedScene" uid="uid://bcus5rqpfg4ll" path="res://Quests/dialogue_rock.tscn" id="6_lsjbb"]
+[ext_resource type="Script" path="res://Quests/Transportation_Evalie_Main.gd" id="7_qwh1o"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3d770"]
 radius = 61.5224
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3pi4"]
+radius = 59.3043
 
 [node name="Node2D" type="Node2D"]
 
@@ -36,5 +40,16 @@ position = Vector2(187, 200)
 [node name="Dialogue_rock" parent="." instance=ExtResource("6_lsjbb")]
 position = Vector2(788, 203)
 
+[node name="Transportation_Evalie_Main" type="Area2D" parent="."]
+position = Vector2(0, 300)
+collision_layer = 64
+collision_mask = 2
+script = ExtResource("7_qwh1o")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Transportation_Evalie_Main"]
+shape = SubResource("CircleShape2D_h3pi4")
+
 [connection signal="body_entered" from="Transportation_Evalie_1_2" to="Transportation_Evalie_1_2" method="_on_body_entered"]
 [connection signal="body_exited" from="Transportation_Evalie_1_2" to="Transportation_Evalie_1_2" method="_on_body_exited"]
+[connection signal="body_entered" from="Transportation_Evalie_Main" to="Transportation_Evalie_Main" method="_on_body_entered"]
+[connection signal="body_exited" from="Transportation_Evalie_Main" to="Transportation_Evalie_Main" method="_on_body_exited"]

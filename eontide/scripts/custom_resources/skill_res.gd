@@ -6,3 +6,4 @@ extends Item
 @export var damage: int = 0
 @export var shield: int = 0
 @export var heal: int = 0
+@export var charge: int = 0

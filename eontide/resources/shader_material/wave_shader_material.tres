@@ -1,0 +1,16 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://d38bxu575034x"]
+
+[ext_resource type="Shader" path="res://shaders/proceduralwater_flytrap/procedualwater.gdshader" id="1_5771f"]
+
+[resource]
+shader = ExtResource("1_5771f")
+shader_parameter/OCTAVE = 6
+shader_parameter/mulscale = 3.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 1.0
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Vector4(0.121, 0.424, 0.643, 1)
+shader_parameter/WATER2_COL = Vector4(0.082, 0.216, 0.361, 1)
+shader_parameter/FOAM_COL = Vector4(0.8125, 0.9609, 0.9648, 1)

@@ -21,9 +21,7 @@ func init(player_health: int, player_skills: Array[Skill]) -> void:
 	turn_queue.init()
 
 func _finish() -> void:
-	get_tree().root.add_child(overworld)
-	overworld.battle_cleanup(turn_queue.heros.get_children()[0] as PlayerActor)
-	queue_free()
+	Transition.finish_battle(self)
 
 func _gen_hero(health: int, skills: Array[Skill]) -> PlayerActor:
 	var new_player_actor: PlayerActor = player_actor.instantiate() as PlayerActor

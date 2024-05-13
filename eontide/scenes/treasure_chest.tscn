@@ -1,0 +1,29 @@
+[gd_scene load_steps=5 format=3 uid="uid://blk3yp3k7c43u"]
+
+[ext_resource type="Script" path="res://scripts/treasure_chest.gd" id="1_daqn0"]
+[ext_resource type="SpriteFrames" uid="uid://d3dxv1o25uqdt" path="res://resources/animations/entities/treasure_chest_anim.tres" id="1_sd6q4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qw3i2"]
+size = Vector2(92, 80)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ptaq1"]
+radius = 100.0
+
+[node name="Treasure Chest" type="StaticBody2D" node_paths=PackedStringArray("anim_sprite", "interaction_range")]
+script = ExtResource("1_daqn0")
+anim_sprite = NodePath("Sprite2D")
+interaction_range = NodePath("Interaction Range")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(2, 2)
+sprite_frames = ExtResource("1_sd6q4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2.08165e-12, 20)
+shape = SubResource("RectangleShape2D_qw3i2")
+
+[node name="Interaction Range" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interaction Range"]
+position = Vector2(2.08165e-12, 20)
+shape = SubResource("CircleShape2D_ptaq1")

@@ -1,0 +1,32 @@
+[gd_resource type="SpriteFrames" load_steps=4 format=3 uid="uid://4dji1y634byy"]
+
+[ext_resource type="Texture2D" uid="uid://b0jhf8iu5cv61" path="res://assets/mc battle sprite off.png" id="1_de7a4"]
+[ext_resource type="Texture2D" uid="uid://lrogssnllv62" path="res://assets/mc battle sprite idle.png" id="1_mr7g1"]
+[ext_resource type="Texture2D" uid="uid://d133k3ju3jna6" path="res://assets/mc battle sprite def.png" id="2_j3kdu"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_de7a4")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_j3kdu")
+}],
+"loop": false,
+"name": &"defend",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_mr7g1")
+}],
+"loop": false,
+"name": &"idle",
+"speed": 5.0
+}]

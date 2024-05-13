@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c0sjjf7i5sdi5"]
 
-[ext_resource type="SpriteFrames" uid="uid://cgc3svu35k1jc" path="res://resources/animations/aurum_entity_anim.tres" id="1_a67o1"]
+[ext_resource type="SpriteFrames" uid="uid://cgc3svu35k1jc" path="res://resources/animations/entities/aurum_entity_anim.tres" id="1_a67o1"]
 [ext_resource type="Script" path="res://scripts/npc.gd" id="1_c7o6j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rkujv"]

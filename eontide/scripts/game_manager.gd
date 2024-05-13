@@ -14,11 +14,8 @@ func _ready() -> void:
 		status_bar = hud.status_bar
 
 func start_battle() -> void:
-	var new_battle: Battle = (battle_scene.instantiate() as Battle)
-	new_battle.overworld = self
-	get_tree().root.add_child(new_battle)
-	get_tree().root.remove_child(self)
-	new_battle.init(status_bar.healthbar.value, inventory.skills)
+	var new_battle: Battle = battle_scene.instantiate() as Battle
+	Transition.start_battle(self, new_battle)
 
 func battle_cleanup(player: PlayerActor) -> void:
 	status_bar.healthbar.value = player.cur_health

@@ -1,0 +1,23 @@
+[gd_resource type="SpriteFrames" load_steps=3 format=3 uid="uid://d3dxv1o25uqdt"]
+
+[ext_resource type="Texture2D" uid="uid://dih72bf4n04rh" path="res://assets/treasure_chest.png" id="1_ebkwh"]
+[ext_resource type="Texture2D" uid="uid://bnd36o26qopvt" path="res://assets/treasure_chest_open.png" id="2_t8nnh"]
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_ebkwh")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_t8nnh")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]

@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://cw144abcsc5l1"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_k6deg"]
-[ext_resource type="SpriteFrames" uid="uid://dh55un7roer7l" path="res://resources/animations/enemy_entity_anim.tres" id="2_q22gl"]
+[ext_resource type="SpriteFrames" uid="uid://dh55un7roer7l" path="res://resources/animations/entities/enemy_entity_anim.tres" id="2_q22gl"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qn0bv"]
 size = Vector2(200, 150)

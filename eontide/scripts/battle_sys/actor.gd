@@ -24,6 +24,7 @@ var turn_cycle: Array[Skill]
 var cur_health: int
 var cur_idx: int = 0
 var barrier: int = 0
+var charge: int = 0
 var changing_time: bool = false
 
 ## Plays out the actor's full turn in the battle system
@@ -55,13 +56,16 @@ func _use_skill(skill: Skill) -> void:
 		_defend(skill.shield)
 	if skill.heal > 0:
 		_heal(skill.heal)
+	if skill.charge > 0:
+		_charge(skill.charge)
 	# Simulate attack animation
 	await get_tree().create_timer(3).timeout
 
 ## Deals damage to opposing actor
 func _attack(damage: int) -> void:
-	emit_signal('do_damage', damage)
-	print('dealt '+str(damage)+' damage')
+	var total_damage: int = damage + charge
+	emit_signal('do_damage', total_damage)
+	print('dealt '+str(total_damage)+' damage')
 
 ## Sets the actor's shield value to the value passed in
 func _defend(shield: int) -> void:
@@ -77,6 +81,10 @@ func _heal(health: int) -> void:
 		cur_health = max_health
 	emit_signal('update_health_ui', cur_health)
 	print('healed '+str(health)+' damage')
+
+## Appends the value passed in to the actor's charge value
+func _charge(extra_charge: int) -> void:
+	charge += extra_charge
 
 ## Subtracts damage recieved from an opposing actor
 ## from the actor's current health

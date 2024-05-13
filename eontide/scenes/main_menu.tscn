@@ -1,0 +1,79 @@
+[gd_scene load_steps=4 format=3 uid="uid://dq43e0nbig6so"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_wt33t"]
+[ext_resource type="Material" uid="uid://d38bxu575034x" path="res://resources/shader_material/wave_shader_material.tres" id="2_hb758"]
+[ext_resource type="Texture2D" uid="uid://b43mytnsplkg5" path="res://assets/Game_Logo.png" id="2_qyo45"]
+
+[node name="Main Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wt33t")
+
+[node name="Background" type="ColorRect" parent="."]
+material = ExtResource("2_hb758")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.141176, 0.423529, 0.643137, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/separation = 80
+alignment = 1
+
+[node name="HSeparator" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="New Game" type="Button" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="Load Game" type="Button" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "Load Game"
+
+[node name="Credits" type="Button" parent="HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(180, 2.08165e-12)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 6
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="HSeparator2" type="Control" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 2.0
+
+[node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_qyo45")
+expand_mode = 5
+stretch_mode = 5

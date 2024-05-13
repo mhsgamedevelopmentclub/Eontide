@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://cffamuqb4w6ij"]
 
-[ext_resource type="Material" uid="uid://dtbavw6rvpvdp" path="res://resources/rain_shader_material.tres" id="1_77c0w"]
+[ext_resource type="Material" uid="uid://dtbavw6rvpvdp" path="res://resources/shader_material/rain_shader_material.tres" id="1_77c0w"]
 [ext_resource type="PackedScene" uid="uid://iooa600vxlif" path="res://scenes/hud/hud.tscn" id="1_d5qar"]
 [ext_resource type="Script" path="res://scripts/game_manager.gd" id="1_kp0go"]
 [ext_resource type="PackedScene" uid="uid://diwnfv1g8qda3" path="res://scenes/player.tscn" id="2_1mt67"]

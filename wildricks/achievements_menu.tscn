@@ -103,14 +103,6 @@ text = "Details"
 [node name="QuestDetails" parent="GridContainer" instance=ExtResource("2_kacon")]
 visible = false
 
-[node name="Ending_scene" type="Button" parent="."]
-layout_mode = 2
-offset_left = 80.0
-offset_top = 428.0
-offset_right = 1085.0
-offset_bottom = 468.0
-text = "See Ending Scene"
-
 [node name="Exit" type="Button" parent="."]
 layout_mode = 1
 anchors_preset = 7

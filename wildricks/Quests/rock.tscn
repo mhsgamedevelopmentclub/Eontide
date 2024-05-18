@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cn442wd5s8btj"]
 
-[ext_resource type="Texture2D" uid="uid://b48ce7o2n3isy" path="res://assets/house1.png" id="1_hykqu"]
+[ext_resource type="Texture2D" uid="uid://bss4gqaxqwtsb" path="res://assets/pixel rock.png" id="1_i3yuk"]
 [ext_resource type="Script" path="res://Quests/Actionable_rockInscription.gd" id="2_cmjm2"]
 [ext_resource type="Resource" uid="uid://bl0d6q46lp260" path="res://dialogues/story.dialogue" id="3_rvtdh"]
 
@@ -14,7 +14,7 @@ radius = 191.094
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 scale = Vector2(1.485, 1.485)
-texture = ExtResource("1_hykqu")
+texture = ExtResource("1_i3yuk")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_xy3ra")

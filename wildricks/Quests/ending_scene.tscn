@@ -1,12 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://dny1s84ddrrdi"]
+[gd_scene load_steps=6 format=3 uid="uid://dny1s84ddrrdi"]
 
 [ext_resource type="PackedScene" uid="uid://cpa5856lc8yb7" path="res://scenes/character_1.tscn" id="1_bxmui"]
 [ext_resource type="Script" path="res://Quests/ending_scene.gd" id="1_siim4"]
 [ext_resource type="PackedScene" uid="uid://ymljriq6tigi" path="res://Quests/final_inscription.tscn" id="2_8he1g"]
+[ext_resource type="Texture2D" uid="uid://dswiht5v88oac" path="res://assets/beach bg.png" id="2_h5pto"]
 [ext_resource type="PackedScene" uid="uid://cn442wd5s8btj" path="res://Quests/rock.tscn" id="4_sxlut"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_siim4")
+
+[node name="BeachBg" type="Sprite2D" parent="."]
+position = Vector2(580.5, 322.5)
+scale = Vector2(0.369062, 0.367222)
+texture = ExtResource("2_h5pto")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 visible = false
@@ -15,10 +21,10 @@ offset_bottom = 645.0
 color = Color(0, 0, 0, 1)
 
 [node name="Character_1" parent="." instance=ExtResource("1_bxmui")]
-position = Vector2(167, 273)
+position = Vector2(116, 537)
 
 [node name="Final_inscription" parent="." instance=ExtResource("2_8he1g")]
 position = Vector2(794, 286)
 
 [node name="Rock" parent="." instance=ExtResource("4_sxlut")]
-position = Vector2(128, 118)
+position = Vector2(387, 473)

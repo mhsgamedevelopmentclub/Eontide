@@ -19,6 +19,8 @@ extends Control
 @onready var main_scene_path: String = "res://scenes/main_menu.tscn"
 
 var quest1_texture_path: String = "res://assets/house1.png"
+
+@onready var ending_scene: Button = $"Ending_scene"
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	quest_details.visible = false

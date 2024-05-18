@@ -100,7 +100,7 @@ position = Vector2(313, 51)
 texture = ExtResource("6_1o1ov")
 
 [node name="Character_1" parent="." instance=ExtResource("1_cnqph")]
-position = Vector2(482, 482)
+position = Vector2(746, 492)
 
 [node name="Transportation_Main_Evalie" type="Area2D" parent="."]
 position = Vector2(100, 100)

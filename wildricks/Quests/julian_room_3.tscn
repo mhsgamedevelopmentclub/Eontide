@@ -109,7 +109,7 @@ shape = SubResource("CircleShape2D_28j5x")
 position = Vector2(125, 115)
 
 [node name="Dialogue_Julian" parent="." instance=ExtResource("5_xxtlu")]
-position = Vector2(126, 25)
+position = Vector2(126, 43)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)

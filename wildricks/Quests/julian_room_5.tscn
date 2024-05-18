@@ -97,7 +97,7 @@ shape = SubResource("CircleShape2D_pwip4")
 position = Vector2(693, 143)
 
 [node name="Dialogue_Julian" parent="." instance=ExtResource("4_jdc4g")]
-position = Vector2(694, 51)
+position = Vector2(694, 70)
 
 [node name="TileMap" type="TileMap" parent="."]
 scale = Vector2(4, 4)

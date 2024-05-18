@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://b0k5jay5ht5yk"]
 
 [ext_resource type="Script" path="res://Quests/Dialogue_evalie.gd" id="1_7cddh"]
-[ext_resource type="Texture2D" uid="uid://b0as0v4amno8" path="res://assets/icon.svg" id="2_60vc5"]
+[ext_resource type="Texture2D" uid="uid://br13qc21ohpqm" path="res://assets/exclamation mark.png" id="2_sj6hq"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8t11l"]
 radius = 55.3263
@@ -13,6 +13,5 @@ script = ExtResource("1_7cddh")
 shape = SubResource("CircleShape2D_8t11l")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-modulate = Color(0.435294, 0.435294, 0.435294, 1)
-scale = Vector2(0.57, 0.57)
-texture = ExtResource("2_60vc5")
+scale = Vector2(0.03, 0.03)
+texture = ExtResource("2_sj6hq")
